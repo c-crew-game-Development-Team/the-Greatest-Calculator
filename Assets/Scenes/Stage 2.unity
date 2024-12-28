@@ -474,7 +474,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24cc92d526da84eebbb7d23cc4b1fd2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  endingbackbutton: {fileID: 0}
   Zero: {fileID: 550766418}
   canvas: {fileID: 908459518}
   Timeover: {fileID: 1495112588}
@@ -3254,7 +3253,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!223 &908459522
 Canvas:
   m_ObjectHideFlags: 0
@@ -4894,7 +4893,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!223 &1540628891
 Canvas:
   m_ObjectHideFlags: 0
@@ -7433,7 +7432,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 8894e4275600049e194885d467c43a26, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 64dc257fcf4a242bbace3b3e08036ad8, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
