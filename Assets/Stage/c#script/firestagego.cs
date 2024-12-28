@@ -8,7 +8,7 @@ public class firestagego : MonoBehaviour
 {
 
     public void Sum2(){
-                SceneManager.LoadScene("go_stage2");
+                SceneManager.LoadScene("Stage 2");
         
     }
 }
