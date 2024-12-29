@@ -50,7 +50,7 @@ public class DialogueSystem : MonoBehaviour
     
     public void End()
     {
-        SceneManager.LoadScene("4 my_room");
+        SceneManager.LoadScene("mainroom");
     }
 
 }

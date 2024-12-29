@@ -805,7 +805,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1713159666}
         m_TargetAssemblyTypeName: sceneMove, Assembly-CSharp
-        m_MethodName: SceneChangeMyroom
+        m_MethodName: mainroomE
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1368,6 +1368,7 @@ MonoBehaviour:
   pausebutton: {fileID: 0}
   pause2: {fileID: 0}
   gogo2: {fileID: 0}
+  BackgroundMusic: {fileID: 0}
 --- !u!4 &1713159667
 Transform:
   m_ObjectHideFlags: 0

@@ -1327,7 +1327,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1097530204}
   - component: {fileID: 1097530203}
-  - component: {fileID: 1097530205}
   m_Layer: 0
   m_Name: backsound1
   m_TagString: Untagged
@@ -1446,18 +1445,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1097530205
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1097530201}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f1f5a81d8d984c459050e31e099d8d4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1111243739
 GameObject:
   m_ObjectHideFlags: 0
@@ -1596,7 +1583,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 986, y: 381}
+  m_AnchoredPosition: {x: 1116, y: 435}
   m_SizeDelta: {x: 300, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1197611484
@@ -1645,7 +1632,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2084933285}
         m_TargetAssemblyTypeName: sceneMove, Assembly-CSharp
-        m_MethodName: SceneChangeMyroom
+        m_MethodName: mainroomE
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2127,7 +2114,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -849, y: 381}
+  m_AnchoredPosition: {x: -946, y: 415}
   m_SizeDelta: {x: 452.991, y: 152.7777}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1788235568
