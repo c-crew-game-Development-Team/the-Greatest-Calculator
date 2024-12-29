@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using Firebase.Extensions;
 
 public class Rankingapi_Real : MonoBehaviour
 {
-    public Rankingapi scRankingapi;
+    public Rankingapi scRankingapi = Rankingapi.Instance;
 
     public TextMeshProUGUI TextUser1; //32
     public TextMeshProUGUI TextScore1;
@@ -75,15 +76,13 @@ public class Rankingapi_Real : MonoBehaviour
 
     void Start()
     {
-        scRankingapi.OnRequest_Api_Ranking_List(""); 
-
         Invoke("ranking",0.1f);
     }
     public void ranking(){
-        string[] onelistSplit = scRankingapi.onelistSplit;
-        int RankLen = onelistSplit.Length;
-
-        for( int i=0 ; i <= (RankLen-1) ; i++){
+        var scores = scRankingapi.GetAllScoreList();
+        Debug.Log(scores);
+        /*
+        for( int i=0 ; i < ; i++){
             string[] Ranking = onelistSplit[i].Split("\"");
             string user = Ranking[3];
             string scores = Ranking[6];
@@ -188,7 +187,7 @@ public class Rankingapi_Real : MonoBehaviour
             }else{
             
             }
-        }
+        }*/
     }
 
 }
