@@ -53,24 +53,24 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/4.2 Settings.unity
     guid: dd325c8aaadeb364aab48521be59de0d
-  - enabled: 1
-    path: Assets/Scenes/ani 1.unity
-    guid: b6724bb34bbc944feb57c4d4fc56b4f5
-  - enabled: 1
-    path: Assets/Scenes/ani.unity
-    guid: edc22f7f0720045cfb5a003626a39c8f
-  - enabled: 1
-    path: Assets/Scenes/go_stage1.unity
-    guid: c1c20dcfbc2d54c9ea8e39aa41608d27
-  - enabled: 1
-    path: Assets/Scenes/go_stage2.unity
-    guid: 1c6407cb48131456fb59f25af4460f3b
-  - enabled: 1
-    path: Assets/Scenes/go_stage3.unity
-    guid: 56051034c761b4ed3ba4e9065428776e
-  - enabled: 1
-    path: Assets/Scenes/Minigame2.unity
-    guid: f8995015a4abead4693e72950a703872
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/player2Talk.unity
     guid: fac0843636ccb48deb1bc60decd2fbf2
@@ -110,4 +110,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/villTalk2.unity
     guid: 78a1cc8fff41d4cd0824904ec0780c5b
+  - enabled: 1
+    path: Assets/Scenes/announcement.unity
+    guid: 72f45ffaf588742759cfbe741668ee64
+  - enabled: 1
+    path: Assets/Scenes/mainroom.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
   m_configObjects: {}

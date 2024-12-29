@@ -47,13 +47,15 @@ public class sceneMove : MonoBehaviour
         SceneManager.LoadScene("4.1.9 cha");
     }
 
-    public void SceneChangeMyroom(){ //마이룸
-        SceneManager.LoadScene("4 my_room");
+    public void mainroomE(){ //마이룸
+        SceneManager.LoadScene("mainroom");
     } 
     public void SceneChangeMyroomSetting(){ //설정
         SceneManager.LoadScene("4.2 Settings");
     }
-
+        public void announcement(){ // 공지사항
+        SceneManager.LoadScene("announcement");
+        }
     public void SceneChangename(){ // 이름입력
         SceneManager.LoadScene("2 playername");
     }
