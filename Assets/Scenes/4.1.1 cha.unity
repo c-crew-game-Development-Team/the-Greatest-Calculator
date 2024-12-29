@@ -221,7 +221,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 10045057}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.54, y: -0.33, z: -1}
+  m_LocalPosition: {x: -4.54, y: -0.33, z: -8}
   m_LocalScale: {x: 0.4, y: 0.4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -428,6 +428,7 @@ MonoBehaviour:
   pausebutton: {fileID: 0}
   pause2: {fileID: 0}
   gogo2: {fileID: 0}
+  BackgroundMusic: {fileID: 0}
 --- !u!4 &493562681
 Transform:
   m_ObjectHideFlags: 0
@@ -586,7 +587,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "\uCE7C\uACFC \uACC4\uC0B0\uAE30\uC0AC \uACAC\uC2B5\uC0DD \uC2DC\uC808
-    \uCE5C\uD55C \uCE5C\uAD6C\uC600\uC2B5\uB2C8\uB2E4. \n\uAC80\uC220\uC774 \uB9E4\uC6B0
+    \uCE5C\uD55C \uCE5C\uAD6C\uC600\uC2B5\uB2C8\uB2E4. \uAC80\uC220\uC774 \uB9E4\uC6B0
     \uB6F0\uC5B4\uB0AC\uC9C0\uB9CC \uACC4\uC0B0\uAE30\uC0AC \uC120\uBC1C \uC2DC\uD5D8\uC5D0
     \uB5A8\uC5B4\uC9C0\uACE0 \uD06C\uAC8C \uB099\uC2EC\uD574 \uD0C0\uB77D\uD55C \uACC4\uC0B0\uAE30\uC785\uB2C8\uB2E4.
     \n\n\uAC00\uC871\uACC4\uC0B0\uAE30 \uC5C6\uC774 \uC790\uB77C \uACC4\uC0B0\uAE30\uC0AC\uB2E8\uC758
@@ -596,7 +597,7 @@ MonoBehaviour:
     \uBC84\uB9AC\uC9C0 \uBABB\uD574 \uACC4\uC0B0\uAE30\uC0AC\uB2E8\uC758 \uD22C\uAD6C\uB97C
     \uC4F0\uACE0 \uB2E4\uB2D9\uB2C8\uB2E4. \uD6D4\uCE5C \u2018\uCF00\uB974\uC6D0\uAE30\u2019\uB97C
     \uC774\uC6A9\uD558\uC5EC \uC790\uAE30\uC758 \uC22B\uC790\uAD34\uBB3C\uAE30\uC0AC\uB2E8\uC744
-    \uB9CC\uB4E4\uC5B4\uC2B5\uB2C8\uB2E4. "
+    \uB9CC\uB4E4\uC5B4\uB0C8\uC2B5\uB2C8\uB2E4."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: cb7c707a7974fdc478000cbe8defa019, type: 2}
   m_sharedMaterial: {fileID: 3929784277195240030, guid: cb7c707a7974fdc478000cbe8defa019, type: 2}

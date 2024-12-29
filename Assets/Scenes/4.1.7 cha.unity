@@ -367,6 +367,7 @@ MonoBehaviour:
   pausebutton: {fileID: 0}
   pause2: {fileID: 0}
   gogo2: {fileID: 0}
+  BackgroundMusic: {fileID: 0}
 --- !u!4 &493562681
 Transform:
   m_ObjectHideFlags: 0
@@ -524,16 +525,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uACF1\uC148\uB098\uB217\uC148\uC758 \uD654\uC5FC\uB9C8\uC744\uC744 \uC5B4\uC9C0\uB7FD\uD788\uACE0
-    \uB2E4\uB2C8\uB294 \uC545\uB3D9 \uC30D\uB465\uC774\uC785\uB2C8\uB2E4. \uC138\uC0C1\uC758
-    \uC22B\uC790 \uCCB4\uACC4\uB97C \uB9DD\uAC00\uB728\uB9AC\uB824\uB294 \uC545\uB2F9
-    \uC138\uB825\uC758 \uC2E0\uB150\uC5D0 \uC138\uB1CC\uB2F9\uD574 \uB85C\uADF8\uC77C\uACFC
-    \uD568\uAED8 \uB9C8\uC744\uC744 \uBD88\uD0DC\uC6B0\uACE0 \uB2E4\uB2D9\uB2C8\uB2E4.
-    \n\n\uBD88\uBA4D\uC774\uB294 \uC9C0\uC2DC \uBC1B\uC740 \uBA85\uB839\uC5D0\uB9CC
-    \uB530\uB974\uACE0 \uBD88\uD544\uC694\uD55C \uD30C\uAD34 \uD589\uC704\uB294 \uD558\uC9C0
-    \uC54A\uB294 \uC131\uD5A5\uC778 \uBC18\uBA74 \uBD88\uB625\uC774\uB294 \uD30C\uAD34
-    \uC131\uD5A5\uC774 \uAC15\uD574 \uBB34\uACE0\uD55C \uACC4\uC0B0\uAE30\uB4E4\uB3C4
-    \uACF5\uACA9\uD558\uACE0 \uB2E4\uB2D9\uB2C8\uB2E4."
+  m_text: "\uACF1\uC148\uB098\uB217\uC148\uC758 \uD654\uC5FC\uB9C8\uC744\uC758 \uC6A9\uC554
+    \uC18D\uC5D0 \uC0B4\uB358 \uBD88\uC528\uC785\uB2C8\uB2E4. \uC22B\uC790 \uCCB4\uACC4\uC758
+    \uD63C\uB780\uC774 \uAC00\uC838\uC628 \uC628\uB3C4 \uBCC0\uD654\uB85C \uC6A9\uC554
+    \uC18D\uC5D0\uC11C \uB6F0\uCCD0\uB098\uC654\uB2E4\uAC00 \uD058\uC5D0\uAC8C \uC7A1\uD600
+    \uBC84\uB838\uC2B5\uB2C8\uB2E4. \n\n\uBD88\uBA4D\uC774\uC640 \uBD88\uB625\uC774\uAC00
+    \uB2E4\uC2DC \uC6A9\uC554 \uC18D\uC5D0 \uB4E4\uC5B4\uAC08 \uC218 \uC788\uAC8C
+    \uB3C4\uC640\uC8FC\uC138\uC694!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: cb7c707a7974fdc478000cbe8defa019, type: 2}
   m_sharedMaterial: {fileID: 3929784277195240030, guid: cb7c707a7974fdc478000cbe8defa019, type: 2}
@@ -1231,7 +1229,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2112171920}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.48, y: -0.9703, z: 0}
+  m_LocalPosition: {x: -4.48, y: -0.9703, z: -8}
   m_LocalScale: {x: 0.333127, y: 0.3468795, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

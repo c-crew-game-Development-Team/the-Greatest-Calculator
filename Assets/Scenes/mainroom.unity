@@ -699,7 +699,6 @@ GameObject:
   - component: {fileID: 428572926}
   - component: {fileID: 428572929}
   - component: {fileID: 428572928}
-  - component: {fileID: 428572930}
   m_Layer: 6
   m_Name: castle
   m_TagString: Untagged
@@ -753,7 +752,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1462932661}
         m_TargetAssemblyTypeName: SceneMoveE, Assembly-CSharp
-        m_MethodName: RankingHome
+        m_MethodName: Rankingani
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -833,19 +832,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 428572923}
   m_CullTransparentMesh: 1
---- !u!114 &428572930
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 428572923}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a694f26764e14405b86b216501a78ee5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  changeHome: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1219,7 +1205,8 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4734551339665236747, guid: 5b9378d5136924843b632ee8b5311100, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 5b9378d5136924843b632ee8b5311100, type: 3}
 --- !u!224 &642127200 stripped
 RectTransform:
@@ -1321,7 +1308,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: bush
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8636564609757187038, guid: 40801917397474ca3ae1d578b1efb816, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 40801917397474ca3ae1d578b1efb816, type: 3}
 --- !u!224 &724122066 stripped
 RectTransform:
@@ -1558,7 +1546,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: flower 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4723758215513467375, guid: 0904c6fd15db543279519cad7694d20c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0904c6fd15db543279519cad7694d20c, type: 3}
 --- !u!224 &766896925 stripped
 RectTransform:
@@ -1847,7 +1836,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: food shop
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1950921497726812547, guid: 7e3778abfbe234712bbd9bf2b4d25f01, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 7e3778abfbe234712bbd9bf2b4d25f01, type: 3}
 --- !u!224 &838338576 stripped
 RectTransform:
@@ -2154,6 +2144,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1462932661}
+        m_TargetAssemblyTypeName: SceneMoveE, Assembly-CSharp
+        m_MethodName: Settings
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!224 &1075985394
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2448,7 +2450,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3638224109998506576, guid: 5139792c8a36347479d2d542cbfce388, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 5139792c8a36347479d2d542cbfce388, type: 3}
 --- !u!224 &1312836776 stripped
 RectTransform:
@@ -3560,7 +3563,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: flower 1 (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4723758215513467375, guid: 0904c6fd15db543279519cad7694d20c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0904c6fd15db543279519cad7694d20c, type: 3}
 --- !u!224 &1575210260 stripped
 RectTransform:
@@ -3662,7 +3666,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: bush (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8636564609757187038, guid: 40801917397474ca3ae1d578b1efb816, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 40801917397474ca3ae1d578b1efb816, type: 3}
 --- !u!1001 &1633370143
 PrefabInstance:
@@ -3759,7 +3764,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: flower 2 (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6786746833185058790, guid: 1988f85f739f642129242f94d0b781de, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1988f85f739f642129242f94d0b781de, type: 3}
 --- !u!224 &1633370144 stripped
 RectTransform:
@@ -4535,7 +4541,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: flower 2
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6786746833185058790, guid: 1988f85f739f642129242f94d0b781de, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1988f85f739f642129242f94d0b781de, type: 3}
 --- !u!224 &2000636833 stripped
 RectTransform:
@@ -4765,7 +4772,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5202780175357979810, guid: 06593379cc3e84d68bad634268b3ec56, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 06593379cc3e84d68bad634268b3ec56, type: 3}
 --- !u!224 &2032657621 stripped
 RectTransform:
@@ -5108,7 +5116,8 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 17d8a2ff615b4499d8c23e4337134930, type: 3}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3125566803816488928, guid: 03caf9bd8bfda4187a45253665334e74, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 03caf9bd8bfda4187a45253665334e74, type: 3}
 --- !u!224 &2106676847 stripped
 RectTransform:
