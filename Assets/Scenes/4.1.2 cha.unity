@@ -451,6 +451,7 @@ MonoBehaviour:
   pausebutton: {fileID: 0}
   pause2: {fileID: 0}
   gogo2: {fileID: 0}
+  BackgroundMusic: {fileID: 0}
 --- !u!4 &493562681
 Transform:
   m_ObjectHideFlags: 0
@@ -608,10 +609,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC778\uC790\uD558\uACE0 \uB9C8\uC74C\uC774 \uB530\uB73B\uD574\uC694.
-    \uC2E4\uB825\uBCF4\uB2E4 \uC815\uC758\uB85C\uC6B4 \uB9C8\uC74C\uAC00\uC9D0\uC744
-    \uC911\uC694\uC2DC\uD558\uB294 \uD3B8\uC785\uB2C8\uB2E4. \uC655\uAD6D\uC758 \uD558\uB098\uBFD0\uC778
-    \uC790\uB97C \uB73B\uD558\uB294 \uC77C\uC655\uAD00\uC744 \uC4F0\uACE0 \uC655\uAD6D\uC758
+  m_text: "\uCF00\uB974\uBA54\uC2A4 \uC655\uAD6D\uC758 \uC655\uC785\uB2C8\uB2E4.
+    \uC778\uC790\uD558\uACE0 \uB9C8\uC74C\uC774 \uB530\uB73B\uD574\uC694. \uC2E4\uB825\uBCF4\uB2E4
+    \uC815\uC758\uB85C\uC6B4 \uB9C8\uC74C\uAC00\uC9D0\uC744 \uC911\uC694\uC2DC\uD569\uB2C8\uB2E4.
+    \uC655\uAD6D\uC758 \uBCF4\uBB3C\uC778 \uC77C\uC655\uAD00\uC744 \uC4F0\uACE0 \uC655\uAD6D\uC758
     \uBB34\uD55C\uD568\uC744 \uC758\uBBF8\uD558\uB294 \uC655\uD640\uC744 \uB4E4\uACE0
     \uC788\uC5B4\uC694. \n\n\uC9C0\uAE08\uAE4C\uC9C0 \uD3C9\uD654\uB86D\uACE0 \uCCB4\uACC4\uC801\uC774\uAE30\uB9CC
     \uD588\uB358 \uCF00\uB974\uBA54\uC2A4 \uC655\uAD6D\uC774\uC5C8\uAE30 \uB54C\uBB38\uC5D0
@@ -794,8 +795,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1027992970}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.85, y: -1.16, z: 0}
-  m_LocalScale: {x: 0.33, y: 0.33, z: 1}
+  m_LocalPosition: {x: -4.1, y: -0.98, z: -8}
+  m_LocalScale: {x: 0.32419202, y: 0.32419202, z: 0.9824}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1166,7 +1167,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: a5f51dd372de444f2a7a9880055256dd, type: 3}
-  m_Color: {r: 1, g: 1, b: 0.3537736, a: 1}
+  m_Color: {r: 1, g: 0.76640606, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 1
   m_DrawMode: 0

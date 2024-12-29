@@ -31,6 +31,12 @@ public class SceneMoveE : MonoBehaviour
       public void Stagehome(){ // 스테이지홈
         SceneManager.LoadScene("Stagehome");
     }
-   
+    public void Settings(){ // 설정
+        SceneManager.LoadScene("4.2 Settings");
+    }
+
+    public void Rankingani(){ // 성
+        SceneManager.LoadScene("Rankingani");
+    }
     
 }

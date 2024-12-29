@@ -389,7 +389,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 474605238}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.17, y: -0.85, z: 0}
+  m_LocalPosition: {x: -4.17, y: -0.85, z: -8}
   m_LocalScale: {x: 1.1, y: 1.1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -428,6 +428,7 @@ MonoBehaviour:
   pausebutton: {fileID: 0}
   pause2: {fileID: 0}
   gogo2: {fileID: 0}
+  BackgroundMusic: {fileID: 0}
 --- !u!4 &493562681
 Transform:
   m_ObjectHideFlags: 0
@@ -585,16 +586,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uCE7C\uC758 \uB204\uC774\uB3D9\uC0DD\uC774\uC5D0\uC694. \uC624\uBE60
-    \uCE7C\uC758 \uBCF4\uD638 \uC544\uB798 \uC788\uC5B4\uC11C \uC5B4\uB9AC\uAD11\uC744
-    \uC798 \uBD80\uB9AC\uC9C0\uB9CC \uC0AC\uC2E4\uC740 \uC624\uBE60\uBCF4\uB2E4 \uD798\uC774
-    \uC138\uB2E4\uACE0\uC694! \uBAA8\uB450\uC5D0\uAC90 \uBE44\uBC00\uC785\uB2C8\uB2E4.
-    \n\n\uD56D\uC0C1 \uC624\uBE60\uAC00 \uC0AC\uC900 \uB9AC\uBCF8\uC744 \uB2EC\uACE0
-    \uB864\uB9AC\uD31D\uC744 \uB4E4\uACE0 \uB2E4\uB140\uC694. \uB9AC\uBCF8\uC740
-    \uC5B8\uC81C\uB098 45\uB3C4\uC758 \uAC01\uC744 \uB9DE\uCDB0\uC11C \uB9F5\uB2C8\uB2E4.
-    \uC2EC\uC2EC\uD558\uBA74 \uB864\uB9AC\uD31D \uC18D \uD53C\uBCF4\uB098\uCE58 \uC218\uC5F4,
-    '\uD669\uAE08 \uBD84\uD560'\uC758 \uBE44\uC728\uC744 \uBD84\uC11D\uD574\uBCF4\uB294
-    \uAC83\uC774 \uCDE8\uBBF8\uB78D\uB2C8\uB2E4."
+  m_text: "\uCE7C\uC758 \uB204\uC774\uB3D9\uC0DD\uC774\uC5D0\uC694. \uBE44\uBC00\uC774\uC9C0\uB9CC
+    \uC0AC\uC2E4\uC740 \uC624\uBE60\uBCF4\uB2E4 \uD798\uC774 \uC138\uB2E4\uACE0\uC694!
+    \uD56D\uC0C1 \uC624\uBE60\uAC00 \uC0AC\uC900 \uB9AC\uBCF8\uC744 \uB2EC\uACE0
+    \uB864\uB9AC\uD31D\uC744 \uB4E4\uACE0 \uB2E4\uB140\uC694. \n\n\uCE7C\uACFC \uD058\uACFC
+    \uAC19\uC774 \uB180\uB7EC \uB2E4\uB2C8\uBA70 \uC990\uAC81\uAC8C \uC9C0\uB0B4\uB358
+    \uC608\uC804\uC744 \uADF8\uB9AC\uC6CC\uD569\uB2C8\uB2E4. \uACC4\uC0B0\uAE30\uC0AC\uB2E8
+    \uC785\uB2E8\uC744 \uC900\uBE44\uD558\uACE0 \uC788\uC5B4\uC694."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: cb7c707a7974fdc478000cbe8defa019, type: 2}
   m_sharedMaterial: {fileID: 3929784277195240030, guid: cb7c707a7974fdc478000cbe8defa019, type: 2}

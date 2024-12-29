@@ -323,6 +323,7 @@ MonoBehaviour:
   pausebutton: {fileID: 0}
   pause2: {fileID: 0}
   gogo2: {fileID: 0}
+  BackgroundMusic: {fileID: 0}
 --- !u!4 &493562681
 Transform:
   m_ObjectHideFlags: 0
@@ -585,17 +586,17 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC624\uB798\uB41C \uB9CC\uD07C \uBAB8\uCCB4\uC5D0\uC11C \uC774\uB07C\uC640
-    \uD480\uB4E4\uC774 \uC790\uB77C\uB098\uACE0 \uC788\uB124\uC694. \uC9C0\uB098\uC628
-    \uC138\uC6D4\uC5D0 \uBC84\uAE08\uAC00\uB3C4\uB85D \uC9C0\uD61C\uB85C\uC6CC\uC694.
-    \n\uC0AC\uC2E4 \uC61B\uB0A0\uC5D0 \uC774\uB984 \uC880 \uB0A0\uB9AC\uB358 \uACC4\uC0B0\uAE30\uC0AC\uAC00
+  m_text: "\uC624\uB798\uB41C \uACC4\uC0B0\uAE30\uC774\uB2C8\uB9CC\uD07C \uBAB8\uCCB4\uC5D0\uC11C
+    \uC774\uB07C\uC640 \uD480\uB4E4\uC774 \uC790\uB77C\uB098\uACE0 \uC788\uB124\uC694.
+    \uC9C0\uB098\uC628 \uC138\uC6D4\uC5D0 \uBC84\uAE08\uAC00\uB3C4\uB85D \uC9C0\uD61C\uB85C\uC6CC\uC694.
+    \uC0AC\uC2E4 \uC61B\uB0A0\uC5D0 \uC774\uB984 \uC880 \uB0A0\uB9AC\uB358 \uACC4\uC0B0\uAE30\uC0AC\uAC00
     \uC544\uB2D0\uAE4C\uC694? \n\n\uD640\uC5F0\uD788 \uB098\uD0C0\uB098\uC11C \uBB38\uC81C\uB97C
     \uD574\uACB0\uD558\uACE0 \uC0AC\uB77C\uC9C0\uB294 \uC740\uB454 \uACE0\uC218\uC608\uC694.
     \uACC4\uC0B0\uC774 \uD544\uC694\uD560 \uB550 \uC790\uAE30 \uBC30\uC758 \uBC84\uD2BC\uC744
     \uB450\uB4DC\uB824 \uACC4\uC0B0\uD558\uB294 \uB2E4\uB978 \uACC4\uC0B0\uAE30\uB4E4\uACFC\uB294
     \uB2EC\uB9AC \uB3D9\uADF8\uB780 \uB3CC\uB4E4\uC744 \uC774\uC6A9\uD574\uC11C \uACC4\uC0B0\uD569\uB2C8\uB2E4.
     \uB5A1\uAC08\uB098\uBB34\uB85C \uB9CC\uB4E4\uC5B4\uC84C\uC5B4\uC694. \uB298 \uC740\uC740\uD55C
-    \uBBF8\uC18C\uB97C \uB760\uACE0 \uBB38\uC81C\uB97C \uD574\uACB0\uD55C\uB2F5\uB2C8\uB2E4. "
+    \uBBF8\uC18C\uB97C \uB760\uACE0 \uBB38\uC81C\uB97C \uD574\uACB0\uD55C\uB2F5\uB2C8\uB2E4."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: cb7c707a7974fdc478000cbe8defa019, type: 2}
   m_sharedMaterial: {fileID: 3929784277195240030, guid: cb7c707a7974fdc478000cbe8defa019, type: 2}
@@ -941,8 +942,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1230770516}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.01, y: -1.15, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -5, y: -0.97, z: -8}
+  m_LocalScale: {x: 1.1530759, y: 1.1530759, z: 1.1530759}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
