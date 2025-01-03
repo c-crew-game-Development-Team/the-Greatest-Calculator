@@ -141,12 +141,12 @@ public class PunchScript : MonoBehaviour
 
     public void PunchMode()
     {
-        if (punchmode == 1) //힐모드
+        if (punchmode == 1) //어택모드
         {
             HealingBar.SetActive(false);
             AttackBar.SetActive(true);
         }
-        else if (punchmode == 2) //어택모드
+        else if (punchmode == 2) //힐모드
         {
             AttackBar.SetActive(false);
             HealingBar.SetActive(true);

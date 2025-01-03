@@ -15,6 +15,8 @@ public class RankingStage : MonoBehaviour
     public AudioClip pauseclick;
     public AudioClip monappear;
 
+    private Rankingapi rankingapi;
+
     void PlaySound(string action){
         switch (action){
             case "stagegogo":
@@ -126,6 +128,8 @@ public class RankingStage : MonoBehaviour
         fly = Instantiate(AttackBar1, new Vector2(xk, yk), transform.rotation);
         fly.SetActive(false);
         flymode = false;
+
+        rankingapi = Rankingapi.Instance; // firebase를 미리 initialize 하기 위해 시작하자마자 인스턴스 생성합니다.
     }
 
     void FixedUpdate()
@@ -316,11 +320,9 @@ public class RankingStage : MonoBehaviour
     {
         FightBar.SetActive(false);
         GameObject.Find("NumberBundle").GetComponent<RankingNumberBundleScript>().numbunOff();
-        StageMove();
-
-        Rankingapi rankingapi = Rankingapi.Instance;
-
         rankingapi.UpdateScore("arduinocc04", 100);
+
+        Invoke("WinAni", 1f);
     }
     void WinAni()
     {
@@ -336,6 +338,7 @@ public class RankingStage : MonoBehaviour
         FightBar.SetActive(false);
         Cul.GetComponent<CulScriptRanking>().AttackBarOff();
         Cul.GetComponent<CulScriptRanking>().move2();
+        rankingapi.UpdateScore("arduinocc04", -100);
         Invoke("LoseAni", 1f);
     }
     void LoseAni()
