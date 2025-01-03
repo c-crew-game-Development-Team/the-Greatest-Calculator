@@ -16,7 +16,7 @@ public class InputField : MonoBehaviour
         if(string.IsNullOrEmpty(nametext.text) == false){
             Debug.Log(nametext.text);
             Username = nametext.text;
-            scRankingapi.OnRequest_Api_Ranking_Req(Username, 0);
+            scRankingapi.SendScore(Username, 0);
             SceneManager.LoadScene("3 Startani");
         }
     }

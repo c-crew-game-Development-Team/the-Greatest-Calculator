@@ -15,9 +15,9 @@ public class Rankingapi_S : MonoBehaviour
     void Awake()
     {
         NativeLeakDetection.Mode = NativeLeakDetectionMode.EnabledWithStackTrace;
-        scRankingapi.Numbers = 3;
+        // scRankingapi.Numbers = 3;
         string Username = InputField.Username; 
-        scRankingapi.OnRequest_Api_Ranking_List(Username); 
+        // scRankingapi.GetScore(Username); 
     }
 
         // 점수 보내기 - 1
