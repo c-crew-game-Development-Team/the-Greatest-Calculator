@@ -89,6 +89,10 @@ public class PunchScript2 : MonoBehaviour
             else if (attack[1] == 2)
             {
                 result = attack[0] - attack[2];
+                if (result < 0) {
+                    result = 0;
+                    PlaySound("error");
+                }
             }
             else if (attack[1] == 3)
             {
@@ -107,11 +111,6 @@ public class PunchScript2 : MonoBehaviour
                 }
             }
 
-            if (attack[0] < attack[2])
-            {
-                result = 0;
-                PlaySound("error");
-            }
             if (result > 999)
             {
                 result = 999;
