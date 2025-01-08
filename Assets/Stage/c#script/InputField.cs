@@ -16,8 +16,15 @@ public class InputField : MonoBehaviour
         if(string.IsNullOrEmpty(nametext.text) == false){
             Debug.Log(nametext.text);
             Username = nametext.text;
-            scRankingapi.SendScore(Username, 0);
+            SaveNickname(Username);
+            //scRankingapi.SendScore(Username, 0);  => 정은체 | 0 | 견습기사 | 0 | 0 이런 식의 초기화
             SceneManager.LoadScene("3 Startani");
         }
+    }
+
+    void SaveNickname(string nickname)
+    {
+        PlayerPrefs.SetString("UserNickname", nickname);
+        PlayerPrefs.Save(); // 닉네임 저장 기기 영구화
     }
 }
