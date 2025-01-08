@@ -16,5 +16,8 @@ public class startMusic : MonoBehaviour
         if (SceneManager.GetActiveScene().name == "3 Startani"){
             Destroy(BackgroundMusic);
         }
+        else if (SceneManager.GetActiveScene().name == "mainroom" ){
+            Destroy(BackgroundMusic);
+        }
     }
 }
