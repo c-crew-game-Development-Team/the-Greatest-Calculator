@@ -7,6 +7,6 @@ using UnityEngine.UI;
 public class mountainstagego : MonoBehaviour
 {
     public void sum3(){
-                SceneManager.LoadScene("Stage 3");
+        SceneManager.LoadScene("Stage 3");
     }
 }
