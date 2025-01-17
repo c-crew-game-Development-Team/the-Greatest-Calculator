@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "960993241793",
+    "firebase_url": "https://the-greatest-calculator-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "the-greatest-calculator",
+    "storage_bucket": "the-greatest-calculator.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:960993241793:android:67962c0ff1cd88773ac240",
+        "android_client_info": {
+          "package_name": "com.ccrew.thegreatestcalculator"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCAB-rgmiAgbmcILWk9Cq2AGDVXMVeyB_Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

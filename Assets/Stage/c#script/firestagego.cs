@@ -6,9 +6,7 @@ using UnityEngine.UI;
 
 public class firestagego : MonoBehaviour
 {
-
     public void Sum2(){
-                SceneManager.LoadScene("Stage 2");
-        
+        SceneManager.LoadScene("Stage 2");
     }
 }
