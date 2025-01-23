@@ -9,7 +9,7 @@ public class InputField : MonoBehaviour
 {
     public TMP_InputField nametext;
     public static string Username;
-    public Rankingapi scRankingapi;
+    public FirebaseInitializer Firebaseapi;
    
     public void clickInput() 
     {
@@ -17,7 +17,7 @@ public class InputField : MonoBehaviour
             Debug.Log(nametext.text);
             Username = nametext.text;
             SaveNickname(Username);
-            //scRankingapi.SendScore(Username, 0);  => 정은체 | 0 | 견습기사 | 0 | 0 이런 식의 초기화
+            Firebaseapi.InitializeUserData(Username); //  파이어베이스 내용 초기화
             SceneManager.LoadScene("3 Startani");
         }
     }
