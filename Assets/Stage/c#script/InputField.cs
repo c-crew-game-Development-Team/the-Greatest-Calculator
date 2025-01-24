@@ -17,7 +17,7 @@ public class InputField : MonoBehaviour
             Debug.Log(nametext.text);
             Username = nametext.text;
             SaveNickname(Username);
-            Firebaseapi.InitializeUserData(Username); //  파이어베이스 내용 초기화
+            Firebaseapi.InitializeUserData(Username);  //  파이어베이스 유저 등록 및 초기화
             SceneManager.LoadScene("3 Startani");
         }
     }

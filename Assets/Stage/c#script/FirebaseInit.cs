@@ -74,18 +74,19 @@ public class FirebaseInitializer : MonoBehaviour
                 {
                     if (copyTask.IsCompleted)
                     {
-                        Debug.Log("데이터가 새로운 userId로 성공적으로 복사되었습니다.");
+                        Debug.Log($"유저 데이터: {snapshot.GetRawJsonValue()}");
+                        Debug.Log($"데이터가 새로운 userId {newUserId} 로 성공적으로 복사되었습니다.");
 
                         // 기존 데이터 삭제
                         databaseReference.Child("User").Child(currentUserId).RemoveValueAsync().ContinueWithOnMainThread(deleteTask =>
                         {
                             if (deleteTask.IsCompleted)
                             {
-                                Debug.Log("기존 userId 데이터가 성공적으로 삭제되었습니다.");
+                                Debug.Log($"기존 {currentUserId} userId 데이터가 성공적으로 삭제되었습니다.");
                             }
                             else
                             {
-                                Debug.LogError("기존 userId 데이터를 삭제하는 데 실패했습니다: " + deleteTask.Exception);
+                                Debug.LogError($"기존 {currentUserId} userId 데이터를 삭제하는 데 실패했습니다: " + deleteTask.Exception);
                             }
                         });
                     }
