@@ -53,6 +53,10 @@ public class sceneMove : MonoBehaviour
     public void SceneChangeMyroomSetting(){ //설정
         SceneManager.LoadScene("4.2 Settings");
     }
+    public void SceneChangeREplayername(){ //이름재설정
+        SceneManager.LoadScene("REplayername");
+    }
+
         public void announcement(){ // 공지사항
         SceneManager.LoadScene("announcement");
         }
