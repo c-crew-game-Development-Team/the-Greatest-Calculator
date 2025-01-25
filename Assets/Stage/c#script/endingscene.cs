@@ -49,15 +49,15 @@ public class endingscene : MonoBehaviour
             GameObject.Find("buttonclick").GetComponent<Buttonclick>().pausemode = true;
         }
 
-        if (30 >= time && time > 0)
+        if (10 >= time && time > 0) // 별 <-> 시간 난이도 조정부 : 10초 차이로 세팅
         {
             star = 1;
         }
-        else if (60 >= time && time > 30) 
+        else if (20 >= time && time > 10) 
         {
             star = 2;
         }
-        else if (time > 60)
+        else if (time > 20)
         {
             star = 3;
         }

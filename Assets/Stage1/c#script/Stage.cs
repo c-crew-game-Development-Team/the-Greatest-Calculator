@@ -329,6 +329,8 @@ public class Stage : MonoBehaviour
             Invoke("StageMove", 8f);
 
             remain = 3; //얘는 남은 몬스터 수 확인용이 아니라 한 번만 실행되도록 하기 위함
+
+            UpdateStageProcess(1);
         }
 
         if (stage == 4 && stagemove == false) //클리어
@@ -578,5 +580,13 @@ public class Stage : MonoBehaviour
             ending.GetComponent<endingscene>().stage = 1;
             ending.GetComponent<endingscene>().endingStart();
         }
+    }
+
+    // StageProcess 값 업데이트 함수
+    public void UpdateStageProcess(int newValue)
+    {
+        PlayerPrefs.SetInt("StageProcess", newValue); // 새 값 저장
+        PlayerPrefs.Save(); // 변경된 값 디스크에 저장
+        Debug.Log($"StageProcess 값이 {newValue}로 업데이트되었습니다.");
     }
 }
