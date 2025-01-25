@@ -183,7 +183,7 @@ public class FirebaseInitializer : MonoBehaviour
             {
                 Debug.LogError("숫자 뭉치 업데이트 실패: " + task.Exception);
             }
-        });
+        }); 
     }
 
 
