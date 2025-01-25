@@ -10,7 +10,7 @@ public class Timecount2 : MonoBehaviour
 {
     AudioSource audioSource;/////////////소리
 
-    public float countdownSeconds = 210;
+    public float countdownSeconds = 240;
     private TextMeshProUGUI timeText;
 
     private bool timeend;

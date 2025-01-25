@@ -250,6 +250,8 @@ public class Stage3 : MonoBehaviour
             Invoke("WinAni", 1f);
 
             stagemove = true;
+
+            UpdateStageProcess(3);
         }
 
         if (stage == 3 && remain == 0) //Ŭ����
@@ -487,5 +489,13 @@ public class Stage3 : MonoBehaviour
             ending.GetComponent<endingscene>().stage = 3;
             ending.GetComponent<endingscene>().endingStart();
         }
+    }
+    
+    // StageProcess 값 업데이트 함수
+    public void UpdateStageProcess(int newValue)
+    {
+        PlayerPrefs.SetInt("StageProcess", newValue); // 새 값 저장
+        PlayerPrefs.Save(); // 변경된 값 디스크에 저장
+        Debug.Log($"StageProcess 값이 {newValue}로 업데이트되었습니다.");
     }
 }

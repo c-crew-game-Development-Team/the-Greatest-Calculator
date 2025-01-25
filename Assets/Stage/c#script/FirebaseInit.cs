@@ -40,7 +40,6 @@ public class FirebaseInitializer : MonoBehaviour
         {
             { "SwordProficiency", 0 },
             { "WorldRecovered", 0 },
-            { "StageProcess", 0 },
             { "Coin", 0 },
             { "NumberBundle", 0 }
         };
@@ -184,41 +183,9 @@ public class FirebaseInitializer : MonoBehaviour
             {
                 Debug.LogError("숫자 뭉치 업데이트 실패: " + task.Exception);
             }
-        });
+        }); 
     }
 
-    // 스테이지 진행 정보 가져오기
-    public void GetStageProgress(string userId)
-    {
-        databaseReference.Child("Users").Child(userId).Child("StageProgress").GetValueAsync().ContinueWithOnMainThread(task =>
-        {
-            if (task.IsCompleted)
-            {
-                DataSnapshot snapshot = task.Result;
-                Debug.Log($"스테이지 진행 정보: {snapshot.Value}");
-            }
-            else
-            {
-                Debug.LogError("스테이지 진행 정보를 가져오는 데 실패했습니다: " + task.Exception);
-            }
-        });
-    }
-
-    // 스테이지 진행 정보 업데이트
-    public void UpdateStageProgress(string userId, int stageProgress)
-    {
-        databaseReference.Child("Users").Child(userId).Child("StageProgress").SetValueAsync(stageProgress).ContinueWithOnMainThread(task =>
-        {
-            if (task.IsCompleted)
-            {
-                Debug.Log("스테이지 진행 정보가 성공적으로 업데이트되었습니다.");
-            }
-            else
-            {
-                Debug.LogError("스테이지 진행 정보 업데이트 실패: " + task.Exception);
-            }
-        });
-    }
 
     // 검술 숙련도 값 업데이트
     public void UpdateSwordProficiency(string userId, int swordProficiency)
