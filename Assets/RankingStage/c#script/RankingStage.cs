@@ -53,15 +53,7 @@ public class RankingStage : MonoBehaviour
 
     public int remain; //�ܰ躰 ���� ���� �� Ȯ�ο� ����
 
-    public GameObject monster;
-    public GameObject monster2;
-    public GameObject monster3;
-    public GameObject monster4;
-    public int monstermove;
-    GameObject mon1;
-    GameObject mon2;
-    GameObject mon3;
-    GameObject mon4;
+    
     float x1 = 20f;
     float x2 = 20f;
     float x3 = 20f;
@@ -94,8 +86,9 @@ public class RankingStage : MonoBehaviour
 
     GameObject ForDestroy;
 
-    private GameObject target; //���콺 Ŭ�� Ȯ�ο� ����
-    void CastRay() //���콺 Ŭ�� Ȯ�ο� �Լ�
+    private GameObject target; //마우스 클릭 확인용 변수
+
+    void CastRay() //마우스 클릭 확인용 함수
     {
         target = null;
         Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -119,7 +112,7 @@ public class RankingStage : MonoBehaviour
         stagemove = false;
         remain = 1;
 
-        monstermove = 0;
+
         
         monnum2 = 0;
 
@@ -252,24 +245,7 @@ public class RankingStage : MonoBehaviour
     }
     public void Flyoff()
     {
-        if (monnum2 == 1)
-        {
-            mon1.GetComponent<MonsterScript>().OnDamaged();
-        }
-        else if (monnum2 == 2)
-        {
-            mon2.GetComponent<MonsterScript>().OnDamaged();
-        }
-        else if (monnum2 == 4)
-        {
-            mon3.GetComponent<MonsterScript2>().OnDamaged();
-        }
-        else if (monnum2 == 5)
-        {
-            mon4.GetComponent<MonsterScript2>().OnDamaged();
-        }
-        else if (monnum2 == 6)
-        {
+
             if(numnum == 1)
             {
                 GameObject.Find("NumberBundle").GetComponent<RankingNumberBundleScript>().num1setting();
@@ -290,8 +266,8 @@ public class RankingStage : MonoBehaviour
             {
                 GameObject.Find("NumberBundle").GetComponent<RankingNumberBundleScript>().num5setting();
             }
-        }
-        monnum2 = 0;
+
+ 
 
         fly.transform.position = new Vector2(xk, yk);
         fly.transform.Rotate(0, 0, 0);
