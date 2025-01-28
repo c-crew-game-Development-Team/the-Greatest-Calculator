@@ -5,15 +5,11 @@ using UnityEngine;
 public class RankingKalScript : MonoBehaviour
 {
     AudioSource audioSource;/////////////소리
-    public AudioClip healsuccess;
     public AudioClip error;
     public AudioClip opps;
     public AudioClip moncome;
     void PlaySound(string action){
         switch (action){
-            case "healsuccess":
-                audioSource.clip = healsuccess;
-                break;
             case "error":
                 audioSource.clip = error;
                 break;
@@ -31,7 +27,6 @@ public class RankingKalScript : MonoBehaviour
     public GameObject Cul;
     public GameObject stage;
     public GameObject story;
-    public GameObject punch;
 
     public int heart; //플레이어 체력
 
@@ -46,7 +41,6 @@ public class RankingKalScript : MonoBehaviour
     float x1;
     float speed1 = 3f;
 
-    bool healmode; //힐모드 제어용 변수
     int random; //힐모드 난수
     //난수 표시 관련
     public GameObject number;
@@ -93,7 +87,6 @@ public class RankingKalScript : MonoBehaviour
         tremble = false;
         movey = 0;
 
-        healmode = false;
 
         num1 = Instantiate(number, new Vector2(xn, yn), transform.rotation);
         num2 = Instantiate(number, new Vector2(xn, yn), transform.rotation);
@@ -124,53 +117,6 @@ public class RankingKalScript : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && stage.GetComponent<RankingStage>().fortime == 1 && stage.GetComponent<RankingStage>().pausemode == false && GameObject.Find("ending").GetComponent<endingscene>().ending == false)
-        {
-            CastRay();
-
-            if (target == this.gameObject && healmode == false) //힐모드 시작
-            {
-                animator.SetBool("heal", true);
-                punch.GetComponent<PunchScript>().re();
-                punch.GetComponent<PunchScript>().ScrollChange2();
-                punch.GetComponent<PunchScript>().punchmode = 2;
-                punch.GetComponent<PunchScript>().PunchMode();
-                setting();
-                healmode = true;
-            }
-            else if ((target == this.gameObject || target == num1 || target == num2) && healmode == true) //힐모드 종료
-            {
-                animator.SetBool("heal", false);
-                if (punch.GetComponent<PunchScript>().result == random) //난수 = 결과 일치
-                {
-                    if (heart + random < 100)
-                        heart += random;
-                    else
-                        heart = 100;
-                    num1.SetActive(false);
-                    num2.SetActive(false);
-                    random = 0;
-                    punch.GetComponent<PunchScript>().re();
-                    punch.GetComponent<PunchScript>().ScrollChange2();
-                    PlaySound("healsuccess");/////////////소리
-                }
-                else //난수 = 결과 불일치
-                {
-                    if (tremble == false)
-                        Tremble();
-                    num1.SetActive(false);
-                    num2.SetActive(false);
-                    random = 0;
-                    punch.GetComponent<PunchScript>().re();
-                    punch.GetComponent<PunchScript>().ScrollChange2();
-                    PlaySound("error");/////////////소리
-                    Handheld.Vibrate();
-                }
-                punch.GetComponent<PunchScript>().punchmode = 1;
-                punch.GetComponent<PunchScript>().PunchMode();
-                healmode = false;
-            }
-        }
 
         if (Input.GetKeyDown(KeyCode.A) && GameObject.Find("NumberBundle").GetComponent<RankingNumberBundleScript>().going == 1) //임의 피격
         {
@@ -250,14 +196,6 @@ public class RankingKalScript : MonoBehaviour
         tremble = false;
     }
 
-    public void HealStop()
-    {
-        animator.SetBool("heal", false);
-        num1.SetActive(false);
-        num2.SetActive(false);
-        random = 0;
-        punch.GetComponent<PunchScript>().re();
-    }
 
     
 

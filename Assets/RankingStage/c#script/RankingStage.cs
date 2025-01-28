@@ -145,11 +145,11 @@ public class RankingStage : MonoBehaviour
 
             HpPlayer.SetActive(false);
 
-            punch.GetComponent<PunchScript>().ScrollChange2();
+            punch.GetComponent<RankingPunchScript>().ScrollChange2();
 
             Cul.GetComponent<CulScriptRanking>().AttackBarOn();
-            punch.GetComponent<PunchScript>().punchmode = 1;
-            punch.GetComponent<PunchScript>().PunchMode();
+            punch.GetComponent<RankingPunchScript>().punchmode = 1;
+            punch.GetComponent<RankingPunchScript>().PunchMode();
             CulSkill2();
             stagemove = true;
         }
@@ -162,10 +162,10 @@ public class RankingStage : MonoBehaviour
             PlaySound("stageclear");/////////////
             Cul.transform.position = new Vector2(7, Cul.transform.position.y);
 
-            punch.GetComponent<PunchScript>().punchmode = 0;
-            punch.GetComponent<PunchScript>().PunchMode();
-            punch.GetComponent<PunchScript>().re();
-            punch.GetComponent<PunchScript>().ScrollChange3();
+            punch.GetComponent<RankingPunchScript>().punchmode = 0;
+            punch.GetComponent<RankingPunchScript>().PunchMode();
+            punch.GetComponent<RankingPunchScript>().re();
+            punch.GetComponent<RankingPunchScript>().ScrollChange3();
             Cul.GetComponent<CulScriptRanking>().AttackBarOff();
      
             Invoke("WinAni", 1f);
@@ -261,9 +261,9 @@ public class RankingStage : MonoBehaviour
         fly.transform.Rotate(0, 0, 0);
         fly.SetActive(false);
         flymode = false;
-        punch.GetComponent<PunchScript>().punchmode = 1;
-        punch.GetComponent<PunchScript>().PunchMode();
-        punch.GetComponent<PunchScript>().ScrollChange2();
+        punch.GetComponent<RankingPunchScript>().punchmode = 1;
+        punch.GetComponent<RankingPunchScript>().PunchMode();
+        punch.GetComponent<RankingPunchScript>().ScrollChange2();
     }
     public void realFlyoff()
     {
@@ -294,10 +294,10 @@ public class RankingStage : MonoBehaviour
 
     public void Lose()
     {
-        punch.GetComponent<PunchScript>().punchmode = 0;
-        punch.GetComponent<PunchScript>().PunchMode();
-        punch.GetComponent<PunchScript>().re();
-        punch.GetComponent<PunchScript>().ScrollChange3();
+        punch.GetComponent<RankingPunchScript>().punchmode = 0;
+        punch.GetComponent<RankingPunchScript>().PunchMode();
+        punch.GetComponent<RankingPunchScript>().re();
+        punch.GetComponent<RankingPunchScript>().ScrollChange3();
         FightBar.SetActive(false);
         Cul.GetComponent<CulScriptRanking>().AttackBarOff();
         Cul.GetComponent<CulScriptRanking>().move2();
@@ -311,10 +311,10 @@ public class RankingStage : MonoBehaviour
     }
     public void TimeOut()
     {
-        punch.GetComponent<PunchScript>().punchmode = 0;
-        punch.GetComponent<PunchScript>().PunchMode();
-        punch.GetComponent<PunchScript>().re();
-        punch.GetComponent<PunchScript>().ScrollChange3();
+        punch.GetComponent<RankingPunchScript>().punchmode = 0;
+        punch.GetComponent<RankingPunchScript>().PunchMode();
+        punch.GetComponent<RankingPunchScript>().re();
+        punch.GetComponent<RankingPunchScript>().ScrollChange3();
         FightBar.SetActive(false);
         GameObject.Find("NumberBundle").GetComponent<RankingNumberBundleScript>().numbunOff();
         Cul.GetComponent<CulScriptRanking>().AttackBarOff();

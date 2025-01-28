@@ -83,7 +83,7 @@ public class RankingNumberBundleScript : MonoBehaviour
 
             if (target == num1)
             {
-                if (GameObject.Find("Punch").GetComponent<PunchScript>().result == anum1) //���� = ��� ��ġ
+                if (GameObject.Find("Punch").GetComponent<RankingPunchScript>().result == anum1) //���� = ��� ��ġ
                 {
                     GameObject.Find("Stage").GetComponent<RankingStage>().xf = x1 - 0.5f;
                     GameObject.Find("Stage").GetComponent<RankingStage>().yf = y1;
@@ -93,10 +93,10 @@ public class RankingNumberBundleScript : MonoBehaviour
                     GameObject.Find("Stage").GetComponent<RankingStage>().Fly();
                     who1 = 1;
 
-                    GameObject.Find("Punch").GetComponent<PunchScript>().punchmode = 0;
-                    GameObject.Find("Punch").GetComponent<PunchScript>().PunchMode();
+                    GameObject.Find("Punch").GetComponent<RankingPunchScript>().punchmode = 0;
+                    GameObject.Find("Punch").GetComponent<RankingPunchScript>().PunchMode();
 
-                    GameObject.Find("Punch").GetComponent<PunchScript>().re();
+                    GameObject.Find("Punch").GetComponent<RankingPunchScript>().re();
                 }
                 else
                 {
@@ -108,7 +108,7 @@ public class RankingNumberBundleScript : MonoBehaviour
             }
             if (target == num2)
             {
-                if (GameObject.Find("Punch").GetComponent<PunchScript>().result == anum2) //���� = ��� ��ġ
+                if (GameObject.Find("Punch").GetComponent<RankingPunchScript>().result == anum2) //���� = ��� ��ġ
                 {
                     GameObject.Find("Stage").GetComponent<RankingStage>().xf = x2 - 0.5f;
                     GameObject.Find("Stage").GetComponent<RankingStage>().yf = y2;
@@ -118,10 +118,10 @@ public class RankingNumberBundleScript : MonoBehaviour
                     GameObject.Find("Stage").GetComponent<RankingStage>().Fly();
                     who2 = 1;
 
-                    GameObject.Find("Punch").GetComponent<PunchScript>().punchmode = 0;
-                    GameObject.Find("Punch").GetComponent<PunchScript>().PunchMode();
+                    GameObject.Find("Punch").GetComponent<RankingPunchScript>().punchmode = 0;
+                    GameObject.Find("Punch").GetComponent<RankingPunchScript>().PunchMode();
 
-                    GameObject.Find("Punch").GetComponent<PunchScript>().re();
+                    GameObject.Find("Punch").GetComponent<RankingPunchScript>().re();
                 }
                 else
                 {
@@ -133,7 +133,7 @@ public class RankingNumberBundleScript : MonoBehaviour
             }
             if (target == num3)
             {
-                if (GameObject.Find("Punch").GetComponent<PunchScript>().result == anum3) //���� = ��� ��ġ
+                if (GameObject.Find("Punch").GetComponent<RankingPunchScript>().result == anum3) //���� = ��� ��ġ
                 {
                     GameObject.Find("Stage").GetComponent<RankingStage>().xf = x3 - 0.5f;
                     GameObject.Find("Stage").GetComponent<RankingStage>().yf = y3;
@@ -142,10 +142,10 @@ public class RankingNumberBundleScript : MonoBehaviour
                     GameObject.Find("Stage").GetComponent<RankingStage>().Fly();
                     who3 = 1;
 
-                    GameObject.Find("Punch").GetComponent<PunchScript>().punchmode = 0;
-                    GameObject.Find("Punch").GetComponent<PunchScript>().PunchMode();
+                    GameObject.Find("Punch").GetComponent<RankingPunchScript>().punchmode = 0;
+                    GameObject.Find("Punch").GetComponent<RankingPunchScript>().PunchMode();
 
-                    GameObject.Find("Punch").GetComponent<PunchScript>().re();
+                    GameObject.Find("Punch").GetComponent<RankingPunchScript>().re();
                 }
                 else
                 {
@@ -157,7 +157,7 @@ public class RankingNumberBundleScript : MonoBehaviour
             }
             if (target == num4)
             {
-                if (GameObject.Find("Punch").GetComponent<PunchScript>().result == anum4) //���� = ��� ��ġ
+                if (GameObject.Find("Punch").GetComponent<RankingPunchScript>().result == anum4) //���� = ��� ��ġ
                 {
                     GameObject.Find("Stage").GetComponent<RankingStage>().xf = x4 - 0.5f;
                     GameObject.Find("Stage").GetComponent<RankingStage>().yf = y4;
@@ -166,10 +166,10 @@ public class RankingNumberBundleScript : MonoBehaviour
                     GameObject.Find("Stage").GetComponent<RankingStage>().Fly();
                     who4 = 1;
 
-                    GameObject.Find("Punch").GetComponent<PunchScript>().punchmode = 0;
-                    GameObject.Find("Punch").GetComponent<PunchScript>().PunchMode();
+                    GameObject.Find("Punch").GetComponent<RankingPunchScript>().punchmode = 0;
+                    GameObject.Find("Punch").GetComponent<RankingPunchScript>().PunchMode();
 
-                    GameObject.Find("Punch").GetComponent<PunchScript>().re();
+                    GameObject.Find("Punch").GetComponent<RankingPunchScript>().re();
                 }
                 else
                 {
@@ -181,7 +181,7 @@ public class RankingNumberBundleScript : MonoBehaviour
             }
             if (target == num5)
             {
-                if (GameObject.Find("Punch").GetComponent<PunchScript>().result == anum5) //���� = ��� ��ġ
+                if (GameObject.Find("Punch").GetComponent<RankingPunchScript>().result == anum5) //���� = ��� ��ġ
                 {
                     GameObject.Find("Stage").GetComponent<RankingStage>().xf = x5 - 0.5f;
                     GameObject.Find("Stage").GetComponent<RankingStage>().yf = y5;
@@ -190,10 +190,10 @@ public class RankingNumberBundleScript : MonoBehaviour
                     GameObject.Find("Stage").GetComponent<RankingStage>().Fly();
                     who5 = 1;
 
-                    GameObject.Find("Punch").GetComponent<PunchScript>().punchmode = 0;
-                    GameObject.Find("Punch").GetComponent<PunchScript>().PunchMode();
+                    GameObject.Find("Punch").GetComponent<RankingPunchScript>().punchmode = 0;
+                    GameObject.Find("Punch").GetComponent<RankingPunchScript>().PunchMode();
 
-                    GameObject.Find("Punch").GetComponent<PunchScript>().re();
+                    GameObject.Find("Punch").GetComponent<RankingPunchScript>().re();
                 }
                 else
                 {
