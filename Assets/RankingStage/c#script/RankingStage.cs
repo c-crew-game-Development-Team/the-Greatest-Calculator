@@ -160,8 +160,7 @@ public class RankingStage : MonoBehaviour
             HpPlayer.SetActive(false);
 
             punch.GetComponent<PunchScript>().ScrollChange2();
-            GameObject.Find("Story").GetComponent<RankingStoryScript>().zadfjladsfzjflkdzjflkajsdflkjasldfjaslfdjl();
-            // GameObject.Find("Story").GetComponent<RankingStoryScript>().Story2On();
+
             Cul.GetComponent<CulScriptRanking>().AttackBarOn();
             punch.GetComponent<PunchScript>().punchmode = 1;
             punch.GetComponent<PunchScript>().PunchMode();
@@ -182,7 +181,7 @@ public class RankingStage : MonoBehaviour
             punch.GetComponent<PunchScript>().re();
             punch.GetComponent<PunchScript>().ScrollChange3();
             Cul.GetComponent<CulScriptRanking>().AttackBarOff();
-            Invoke("Story2_2", 4f);
+     
             Invoke("WinAni", 1f);
 
             stagemove = true;
@@ -363,15 +362,6 @@ public class RankingStage : MonoBehaviour
         GameObject.Find("ending").GetComponent<endingscene>().Stagetimeout();
     }
 
-    public void Story2_2()
-    {
-        GameObject.Find("Story").GetComponent<RankingStoryScript>().Story2_2On();
-        Invoke("NextStory", 1f);
-    }
-    public void NextStory()
-    {
-
-    }
 
     public void StageEnding()
     {
