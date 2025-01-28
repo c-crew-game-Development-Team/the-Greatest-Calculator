@@ -124,7 +124,7 @@ public class RankingKalScript : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && stage.GetComponent<Stage3>().fortime == 1 && stage.GetComponent<Stage3>().pausemode == false && stage.GetComponent<Stage3>().stage < 2 && GameObject.Find("ending").GetComponent<endingscene>().ending == false)
+        if (Input.GetMouseButtonDown(0) && stage.GetComponent<RankingStage>().fortime == 1 && stage.GetComponent<RankingStage>().pausemode == false && GameObject.Find("ending").GetComponent<endingscene>().ending == false)
         {
             CastRay();
 
@@ -259,55 +259,6 @@ public class RankingKalScript : MonoBehaviour
         punch.GetComponent<PunchScript>().re();
     }
 
-    //스테이지 이동
-    public void Run() //이동 대기 함수
-    {
-        Invoke("Run_", 1f);
-    }
-    void Run_() //애니메이션 미리
-    {
-        animator.SetBool("walk", true);
-        Invoke("RunM", 0.6f);
-    }
-    void RunM() //중간으로 이동 함수
-    {
-        move = 1;
-        Invoke("Find", 5f);
-    }
-    void Find() //몬스터 마주침! 함수
-    {
-        move = 0;
-        f = true;
-        animator.SetBool("walk", false);
-        if (stage.GetComponent<Stage3>().stage < 2)
-        {
-            animator.SetTrigger("surprise");
-        }
-        Invoke("Re", 2f);
-        PlaySound("opps");
-    }
-    void Re() //원위치로 이동 함수
-    {
-        Cul.GetComponent<CulScript>().move1();
-        move = 2;
-        f = false;
-        Invoke("Next", 5f);
-        Invoke("soundDong", 1.5f);
-        if (stage.GetComponent<Stage3>().stage == 0)
-        {
-            Invoke("Story1", 2.85f);
-        }
-    }
-    void soundDong(){
-        PlaySound("moncome");
-    }
-    public void Next() //이동 변수 초기화 함수
-    {
-        move = 0;
-    }
+    
 
-    void Story1() //스토리1
-    {
-        story.GetComponent<Story3Script>().Story1On();
-    }
 }

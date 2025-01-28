@@ -47,11 +47,11 @@ public class RankingStage : MonoBehaviour
     public GameObject Resume;
     public bool pausemode;
 
-    public int stage; //���� �ܰ� Ȯ�ο� ����
-    public bool stagemove; //�ܰ� ���� �̵� �ð� Ȯ���� ����
-    public int fortime; //�ð� �帣�� �ϱ� ���� ����
+    public int stage; //현재 단계 확인용 변수
+    public bool stagemove; //단계 사이 이동 시간 확보용 변수
+    public int fortime; //시간 흐르게 하기 위한 변수
 
-    public int remain; //�ܰ躰 ���� ���� �� Ȯ�ο� ����
+
 
     
     float x1 = 20f;
@@ -79,7 +79,6 @@ public class RankingStage : MonoBehaviour
     public int monnum2;
     public int numnum;
 
-    public float story;
 
     public GameObject TimeCount;
     public GameObject TimeBox;
@@ -110,13 +109,11 @@ public class RankingStage : MonoBehaviour
 
         stage = 2;
         stagemove = false;
-        remain = 1;
 
 
         
         monnum2 = 0;
 
-        story = 2;
         
         fly = Instantiate(AttackBar1, new Vector2(xk, yk), transform.rotation);
         fly.SetActive(false);
@@ -142,10 +139,6 @@ public class RankingStage : MonoBehaviour
     {
         if (stage == 2 && stagemove == false) //2�ܰ� ����
         {
-            // GameObject.Find("Stage").GetComponent<Stage3>().PauseMode();
-            GameObject.Find("Stage").GetComponent<RankingStage>().story = 2;
-
-            // canvas.SetActive(true);
             fortime = 1;
             TimeCount.transform.position = new Vector2(-8.5f, TimeCount.transform.position.y);
             TimeBox.transform.position = new Vector2(-8.5f, TimeBox.transform.position.y);
@@ -180,7 +173,7 @@ public class RankingStage : MonoBehaviour
             stagemove = true;
         }
 
-        if (stage == 3 && remain == 0) //Ŭ����
+        if (stage == 3 ) //Ŭ����
         {
             PlaySound("stagegogo");/////////////소리
             StageEnding();
@@ -223,11 +216,6 @@ public class RankingStage : MonoBehaviour
     }
 
 
-    public void StageMove() //�ܰ� ���� �̵� �ð� Ȯ���� �Լ�
-    {
-        stage++;
-        stagemove = false;
-    }
 
     public void Fly()
     {
