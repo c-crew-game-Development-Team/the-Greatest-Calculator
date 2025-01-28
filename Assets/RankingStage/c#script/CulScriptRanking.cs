@@ -84,7 +84,7 @@ public class CulScriptRanking : MonoBehaviour
     bool timer;
     float time;
 
-    public GameObject KerWongi;
+
     float xP = 20;
     float yP = 1;
     float speed4 = 2f;
@@ -124,7 +124,6 @@ public class CulScriptRanking : MonoBehaviour
 
         timer = false;
 
-        KerWongi.transform.position = new Vector2(xP, yP);
         movek = 0;
     }
 
@@ -170,12 +169,10 @@ public class CulScriptRanking : MonoBehaviour
 
         if (movek == 1)
         {
-            KerWongi.transform.position = Vector3.Lerp(KerWongi.transform.position, new Vector2(transform.position.x - 3f, KerWongi.transform.position.y), Time.deltaTime * speed4); ;
         }
 
         if (movek == 2)
         {
-            KerWongi.transform.position = new Vector2(transform.position.x - 3f, KerWongi.transform.position.y);
         }
     }
 
@@ -364,13 +361,7 @@ public class CulScriptRanking : MonoBehaviour
         flymode = false;
     }
 
-    public void KerWongiOn()
-    {
-        KerWongi.transform.position = new Vector2(0, yP);
-        PlaySound("cal1appear");
-        Invoke("Surprise", 0.5f);
-        Invoke("Story3", 3f);
-    }
+
     void Surprise()
     {
         GameObject.Find("Player").GetComponent<Animator>().SetTrigger("surprise");
@@ -411,7 +402,6 @@ public class CulScriptRanking : MonoBehaviour
     void Story3()
     {
         GameObject.Find("Story").GetComponent<Story3Script>().Story3On();
-        KerWongi.GetComponent<KerWongiScript>().twingkle();
         Invoke("Story3_1", 2f);
     }
     void Story3_1()
@@ -428,7 +418,6 @@ public class CulScriptRanking : MonoBehaviour
     void Story3_2()
     {
         GameObject.Find("Story").GetComponent<Story3Script>().Story3_2On();
-        KerWongi.GetComponent<KerWongiScript>().Boom();
         transform.position = new Vector2(transform.position.x, yb);
         stop = true;
         movey = 0;

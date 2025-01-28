@@ -370,7 +370,7 @@ public class RankingStage : MonoBehaviour
     }
     public void NextStory()
     {
-        Cul.GetComponent<CulScriptRanking>().KerWongiOn();
+
     }
 
     public void StageEnding()
