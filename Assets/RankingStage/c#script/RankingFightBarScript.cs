@@ -24,12 +24,18 @@ public class RankingFightBarScript : MonoBehaviour
 
         if (fighthbarObject.GetComponent<Slider>().value >= 10 && once == false)
         {
+            GameObject.Find("Stage").GetComponent<RankingStage>().stage = 3;
+            GameObject.Find("Stage").GetComponent<RankingStage>().stagemove = false;
+        
             GameObject.Find("Stage").GetComponent<RankingStage>().Win();
             once = true;
         }
 
         if (fighthbarObject.GetComponent<Slider>().value <= 0 && once == false)
         {
+            GameObject.Find("Stage").GetComponent<RankingStage>().stage = 3;
+            GameObject.Find("Stage").GetComponent<RankingStage>().stagemove = false;
+            
             GameObject.Find("Stage").GetComponent<RankingStage>().Lose();
             once = true;
         }

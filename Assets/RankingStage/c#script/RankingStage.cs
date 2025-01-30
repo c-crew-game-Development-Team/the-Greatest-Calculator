@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class RankingStage : MonoBehaviour
 {
+    public FirebaseInitializer FirebaseApi;
+
     public GameObject BackgroundMusic;
     AudioSource backmusic;
     AudioSource audioSource;/////////////소리
@@ -15,7 +17,7 @@ public class RankingStage : MonoBehaviour
     public AudioClip pauseclick;
     public AudioClip monappear;
 
-    private Rankingapi rankingapi;
+    private GameObject versus;
 
     void PlaySound(string action){
         switch (action){
@@ -40,28 +42,19 @@ public class RankingStage : MonoBehaviour
     public GameObject canvas;
     public GameObject ending;
     public GameObject FightBar;
-    public GameObject HpPlayer;
     public GameObject punch;
 
     public GameObject Pause;
     public GameObject Resume;
     public bool pausemode;
 
-    public int stage; //���� �ܰ� Ȯ�ο� ����
-    public bool stagemove; //�ܰ� ���� �̵� �ð� Ȯ���� ����
-    public int fortime; //�ð� �帣�� �ϱ� ���� ����
+    public int stage; //현재 단계 확인용 변수
+    public bool stagemove; //단계 사이 이동 시간 확보용 변수
+    public int fortime; //시간 흐르게 하기 위한 변수
 
-    public int remain; //�ܰ躰 ���� ���� �� Ȯ�ο� ����
 
-    public GameObject monster;
-    public GameObject monster2;
-    public GameObject monster3;
-    public GameObject monster4;
-    public int monstermove;
-    GameObject mon1;
-    GameObject mon2;
-    GameObject mon3;
-    GameObject mon4;
+
+    
     float x1 = 20f;
     float x2 = 20f;
     float x3 = 20f;
@@ -87,15 +80,15 @@ public class RankingStage : MonoBehaviour
     public int monnum2;
     public int numnum;
 
-    public float story;
 
     public GameObject TimeCount;
     public GameObject TimeBox;
 
     GameObject ForDestroy;
 
-    private GameObject target; //���콺 Ŭ�� Ȯ�ο� ����
-    void CastRay() //���콺 Ŭ�� Ȯ�ο� �Լ�
+    private GameObject target; //마우스 클릭 확인용 변수
+
+    void CastRay() //마우스 클릭 확인용 함수
     {
         target = null;
         Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -113,23 +106,19 @@ public class RankingStage : MonoBehaviour
         audioSource = GetComponent<AudioSource>();/////////////소리
         FightBar.SetActive(false);
 
-        ResumeMode();
 
-        stage = 2;
+        stage = 1;
         stagemove = false;
-        remain = 1;
 
-        monstermove = 0;
+
         
         monnum2 = 0;
 
-        story = 2;
         
         fly = Instantiate(AttackBar1, new Vector2(xk, yk), transform.rotation);
         fly.SetActive(false);
         flymode = false;
 
-        rankingapi = Rankingapi.Instance; // firebase를 미리 initialize 하기 위해 시작하자마자 인스턴스 생성합니다.
     }
 
     void FixedUpdate()
@@ -147,24 +136,29 @@ public class RankingStage : MonoBehaviour
 
     void Update()
     {
-        if (stage == 2 && stagemove == false) //2�ܰ� ����
+        if (stage == 1 && stagemove == false) //난이도
         {
-            // GameObject.Find("Stage").GetComponent<Stage3>().PauseMode();
-            GameObject.Find("Stage").GetComponent<RankingStage>().story = 2;
+            fortime = 0;
 
-            // canvas.SetActive(true);
+
+            punch.GetComponent<RankingPunchScript>().punchmode = 0;
+            punch.GetComponent<RankingPunchScript>().PunchMode();
+
+            stagemove = true;
+        }
+
+        if (stage == 2 && stagemove == false) // 본게임
+        {
+            versus = Resources.Load<GameObject>("Rending/versus");
+            Instantiate(versus);
             fortime = 1;
-            TimeCount.transform.position = new Vector2(-8.5f, TimeCount.transform.position.y);
-            TimeBox.transform.position = new Vector2(-8.5f, TimeBox.transform.position.y);
 
-            HpPlayer.SetActive(false);
 
-            punch.GetComponent<PunchScript>().ScrollChange2();
-            GameObject.Find("Story").GetComponent<RankingStoryScript>().zadfjladsfzjflkdzjflkajsdflkjasldfjaslfdjl();
-            // GameObject.Find("Story").GetComponent<RankingStoryScript>().Story2On();
+            punch.GetComponent<RankingPunchScript>().ScrollChange2();
+
             Cul.GetComponent<CulScriptRanking>().AttackBarOn();
-            punch.GetComponent<PunchScript>().punchmode = 1;
-            punch.GetComponent<PunchScript>().PunchMode();
+            punch.GetComponent<RankingPunchScript>().punchmode = 1;
+            punch.GetComponent<RankingPunchScript>().PunchMode();
             CulSkill2();
             stagemove = true;
         }
@@ -172,70 +166,20 @@ public class RankingStage : MonoBehaviour
         if (stage == 3 && stagemove == false) //���丮 ���
         {
             fortime = 0;
-            TimeCount.transform.position = new Vector2(0, TimeCount.transform.position.y);
-            TimeBox.transform.position = new Vector2(0, TimeBox.transform.position.y);
-            PlaySound("stageclear");/////////////
-            Cul.transform.position = new Vector2(7, Cul.transform.position.y);
 
-            punch.GetComponent<PunchScript>().punchmode = 0;
-            punch.GetComponent<PunchScript>().PunchMode();
-            punch.GetComponent<PunchScript>().re();
-            punch.GetComponent<PunchScript>().ScrollChange3();
+            punch.GetComponent<RankingPunchScript>().punchmode = 0;
+            punch.GetComponent<RankingPunchScript>().PunchMode();
+            punch.GetComponent<RankingPunchScript>().re();
+            punch.GetComponent<RankingPunchScript>().ScrollChange3();
             Cul.GetComponent<CulScriptRanking>().AttackBarOff();
-            Invoke("Story2_2", 4f);
-            Invoke("WinAni", 1f);
 
-            stagemove = true;
-        }
-
-        if (stage == 3 && remain == 0) //Ŭ����
-        {
-            PlaySound("stagegogo");/////////////소리
-            StageEnding();
+            FightBar.SetActive(false);
+            GameObject.Find("NumberBundle").GetComponent<RankingNumberBundleScript>().numbunOff();
 
             stagemove = true;
         }
     }
 
-    public void PauseMode()
-    {
-        Time.timeScale = 0;
-        pausemode = true;
-        Pause.SetActive(false);
-        Resume.SetActive(true);
-    }
-    public void MusicPauseMode()//음악도 같이
-    {
-        backmusic.Pause();
-        Time.timeScale = 0;
-        pausemode = true;
-        //GameObject.Find("buttonclick").GetComponent<Buttonclick2>().pausemode = true;
-        Pause.SetActive(false);
-        Resume.SetActive(true);
-    }
-    public void ResumeMode()
-    {
-        Time.timeScale = 1;
-        pausemode = false;
-        Pause.SetActive(true);
-        Resume.SetActive(false);
-    }
-    public void MusicResumeMode() //음악도 같이
-    {
-        backmusic.Play();
-        Time.timeScale = 1;
-        pausemode = false;
-        //GameObject.Find("buttonclick").GetComponent<Buttonclick2>().pausemode = false;
-        Pause.SetActive(true);
-        Resume.SetActive(false);
-    }
-
-
-    public void StageMove() //�ܰ� ���� �̵� �ð� Ȯ���� �Լ�
-    {
-        stage++;
-        stagemove = false;
-    }
 
     public void Fly()
     {
@@ -253,24 +197,7 @@ public class RankingStage : MonoBehaviour
     }
     public void Flyoff()
     {
-        if (monnum2 == 1)
-        {
-            mon1.GetComponent<MonsterScript>().OnDamaged();
-        }
-        else if (monnum2 == 2)
-        {
-            mon2.GetComponent<MonsterScript>().OnDamaged();
-        }
-        else if (monnum2 == 4)
-        {
-            mon3.GetComponent<MonsterScript2>().OnDamaged();
-        }
-        else if (monnum2 == 5)
-        {
-            mon4.GetComponent<MonsterScript2>().OnDamaged();
-        }
-        else if (monnum2 == 6)
-        {
+
             if(numnum == 1)
             {
                 GameObject.Find("NumberBundle").GetComponent<RankingNumberBundleScript>().num1setting();
@@ -291,16 +218,16 @@ public class RankingStage : MonoBehaviour
             {
                 GameObject.Find("NumberBundle").GetComponent<RankingNumberBundleScript>().num5setting();
             }
-        }
-        monnum2 = 0;
+
+ 
 
         fly.transform.position = new Vector2(xk, yk);
         fly.transform.Rotate(0, 0, 0);
         fly.SetActive(false);
         flymode = false;
-        punch.GetComponent<PunchScript>().punchmode = 1;
-        punch.GetComponent<PunchScript>().PunchMode();
-        punch.GetComponent<PunchScript>().ScrollChange2();
+        punch.GetComponent<RankingPunchScript>().punchmode = 1;
+        punch.GetComponent<RankingPunchScript>().PunchMode();
+        punch.GetComponent<RankingPunchScript>().ScrollChange2();
     }
     public void realFlyoff()
     {
@@ -318,67 +245,26 @@ public class RankingStage : MonoBehaviour
 
     public void Win()
     {
-        FightBar.SetActive(false);
-        GameObject.Find("NumberBundle").GetComponent<RankingNumberBundleScript>().numbunOff();
-        rankingapi.UpdateScore("arduinocc04", 100);
-
-        Invoke("WinAni", 1f);
-    }
-    void WinAni()
-    {
         Cul.GetComponent<Animator>().SetTrigger("hit");
+        GameObject.Find("ending").GetComponent<endingscene>().PlayerWinEnd();
+
+        string userId = PlayerPrefs.GetString("UserNickname", "DefaultUser");
+        FirebaseApi.UpdateSwordProficiency(userId, 100); // 이길 시 점수 +100
     }
 
     public void Lose()
     {
-        punch.GetComponent<PunchScript>().punchmode = 0;
-        punch.GetComponent<PunchScript>().PunchMode();
-        punch.GetComponent<PunchScript>().re();
-        punch.GetComponent<PunchScript>().ScrollChange3();
-        FightBar.SetActive(false);
-        Cul.GetComponent<CulScriptRanking>().AttackBarOff();
-        Cul.GetComponent<CulScriptRanking>().move2();
-        rankingapi.UpdateScore("arduinocc04", -100);
-        Invoke("LoseAni", 1f);
-    }
-    void LoseAni()
-    {
         GameObject.Find("Player").GetComponent<Animator>().SetTrigger("hit");
-        GameObject.Find("ending").GetComponent<endingscene>().Playerpowerend();
+        GameObject.Find("ending").GetComponent<endingscene>().PlayerLoseEnd();
+
+        string userId = PlayerPrefs.GetString("UserNickname", "DefaultUser");
+        FirebaseApi.UpdateSwordProficiency(userId, 10); // 질 시 점수 +10
     }
+
     public void TimeOut()
     {
-        punch.GetComponent<PunchScript>().punchmode = 0;
-        punch.GetComponent<PunchScript>().PunchMode();
-        punch.GetComponent<PunchScript>().re();
-        punch.GetComponent<PunchScript>().ScrollChange3();
-        FightBar.SetActive(false);
-        GameObject.Find("NumberBundle").GetComponent<RankingNumberBundleScript>().numbunOff();
-        Cul.GetComponent<CulScriptRanking>().AttackBarOff();
-        Invoke("TimeLoseAni", 1f);
-    }
-    void TimeLoseAni()
-    {
         GameObject.Find("Player").GetComponent<Animator>().SetTrigger("hit");
-        GameObject.Find("ending").GetComponent<endingscene>().Stagetimeout();
-    }
-
-    public void Story2_2()
-    {
-        GameObject.Find("Story").GetComponent<RankingStoryScript>().Story2_2On();
-        Invoke("NextStory", 1f);
-    }
-    public void NextStory()
-    {
-        Cul.GetComponent<CulScriptRanking>().KerWongiOn();
-    }
-
-    public void StageEnding()
-    {
-        if (ending != null)
-        {
-            ending.GetComponent<endingscene>().stage = 3;
-            ending.GetComponent<endingscene>().endingStart();
-        }
+        
+        GameObject.Find("ending").GetComponent<endingscene>().RankingTimeend();
     }
 }

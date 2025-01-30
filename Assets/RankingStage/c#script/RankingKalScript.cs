@@ -5,15 +5,11 @@ using UnityEngine;
 public class RankingKalScript : MonoBehaviour
 {
     AudioSource audioSource;/////////////소리
-    public AudioClip healsuccess;
     public AudioClip error;
     public AudioClip opps;
     public AudioClip moncome;
     void PlaySound(string action){
         switch (action){
-            case "healsuccess":
-                audioSource.clip = healsuccess;
-                break;
             case "error":
                 audioSource.clip = error;
                 break;
@@ -31,7 +27,6 @@ public class RankingKalScript : MonoBehaviour
     public GameObject Cul;
     public GameObject stage;
     public GameObject story;
-    public GameObject punch;
 
     public int heart; //플레이어 체력
 
@@ -46,7 +41,6 @@ public class RankingKalScript : MonoBehaviour
     float x1;
     float speed1 = 3f;
 
-    bool healmode; //힐모드 제어용 변수
     int random; //힐모드 난수
     //난수 표시 관련
     public GameObject number;
@@ -93,7 +87,6 @@ public class RankingKalScript : MonoBehaviour
         tremble = false;
         movey = 0;
 
-        healmode = false;
 
         num1 = Instantiate(number, new Vector2(xn, yn), transform.rotation);
         num2 = Instantiate(number, new Vector2(xn, yn), transform.rotation);
@@ -124,53 +117,6 @@ public class RankingKalScript : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && stage.GetComponent<Stage3>().fortime == 1 && stage.GetComponent<Stage3>().pausemode == false && stage.GetComponent<Stage3>().stage < 2 && GameObject.Find("ending").GetComponent<endingscene>().ending == false)
-        {
-            CastRay();
-
-            if (target == this.gameObject && healmode == false) //힐모드 시작
-            {
-                animator.SetBool("heal", true);
-                punch.GetComponent<PunchScript>().re();
-                punch.GetComponent<PunchScript>().ScrollChange2();
-                punch.GetComponent<PunchScript>().punchmode = 2;
-                punch.GetComponent<PunchScript>().PunchMode();
-                setting();
-                healmode = true;
-            }
-            else if ((target == this.gameObject || target == num1 || target == num2) && healmode == true) //힐모드 종료
-            {
-                animator.SetBool("heal", false);
-                if (punch.GetComponent<PunchScript>().result == random) //난수 = 결과 일치
-                {
-                    if (heart + random < 100)
-                        heart += random;
-                    else
-                        heart = 100;
-                    num1.SetActive(false);
-                    num2.SetActive(false);
-                    random = 0;
-                    punch.GetComponent<PunchScript>().re();
-                    punch.GetComponent<PunchScript>().ScrollChange2();
-                    PlaySound("healsuccess");/////////////소리
-                }
-                else //난수 = 결과 불일치
-                {
-                    if (tremble == false)
-                        Tremble();
-                    num1.SetActive(false);
-                    num2.SetActive(false);
-                    random = 0;
-                    punch.GetComponent<PunchScript>().re();
-                    punch.GetComponent<PunchScript>().ScrollChange2();
-                    PlaySound("error");/////////////소리
-                    Handheld.Vibrate();
-                }
-                punch.GetComponent<PunchScript>().punchmode = 1;
-                punch.GetComponent<PunchScript>().PunchMode();
-                healmode = false;
-            }
-        }
 
         if (Input.GetKeyDown(KeyCode.A) && GameObject.Find("NumberBundle").GetComponent<RankingNumberBundleScript>().going == 1) //임의 피격
         {
@@ -250,64 +196,7 @@ public class RankingKalScript : MonoBehaviour
         tremble = false;
     }
 
-    public void HealStop()
-    {
-        animator.SetBool("heal", false);
-        num1.SetActive(false);
-        num2.SetActive(false);
-        random = 0;
-        punch.GetComponent<PunchScript>().re();
-    }
 
-    //스테이지 이동
-    public void Run() //이동 대기 함수
-    {
-        Invoke("Run_", 1f);
-    }
-    void Run_() //애니메이션 미리
-    {
-        animator.SetBool("walk", true);
-        Invoke("RunM", 0.6f);
-    }
-    void RunM() //중간으로 이동 함수
-    {
-        move = 1;
-        Invoke("Find", 5f);
-    }
-    void Find() //몬스터 마주침! 함수
-    {
-        move = 0;
-        f = true;
-        animator.SetBool("walk", false);
-        if (stage.GetComponent<Stage3>().stage < 2)
-        {
-            animator.SetTrigger("surprise");
-        }
-        Invoke("Re", 2f);
-        PlaySound("opps");
-    }
-    void Re() //원위치로 이동 함수
-    {
-        Cul.GetComponent<CulScript>().move1();
-        move = 2;
-        f = false;
-        Invoke("Next", 5f);
-        Invoke("soundDong", 1.5f);
-        if (stage.GetComponent<Stage3>().stage == 0)
-        {
-            Invoke("Story1", 2.85f);
-        }
-    }
-    void soundDong(){
-        PlaySound("moncome");
-    }
-    public void Next() //이동 변수 초기화 함수
-    {
-        move = 0;
-    }
+    
 
-    void Story1() //스토리1
-    {
-        story.GetComponent<Story3Script>().Story1On();
-    }
 }

@@ -14,7 +14,7 @@ public class sceneMove : MonoBehaviour
     public void SceneChange2(){
         SceneManager.LoadScene("RealRanking");
     }
-    public void SceneChange3(){
+    public void SceneChangeRankingHome(){
         SceneManager.LoadScene("RankingHome");
     }
     public void SceneChange0(){
