@@ -33,7 +33,7 @@ public class CulScriptRanking : MonoBehaviour
     public GameObject AttackBar;
     public GameObject KalAttackBar;
     public GameObject stage;
-    public GameObject story;
+  
     public GameObject punch;
 
     private GameObject target; //마우스 클릭 확인용 변수
@@ -83,12 +83,16 @@ public class CulScriptRanking : MonoBehaviour
     int numnum;
     bool timer;
     float time;
+    float levelTime;
 
 
     float xP = 20;
     float yP = 1;
     float speed4 = 2f;
     int movek;
+
+
+    public GameObject levelPanel; //레벨 판
 
     void Start() //게임 시작 초기화
     {
@@ -253,7 +257,7 @@ public class CulScriptRanking : MonoBehaviour
 
     public void Timer()
     {
-        time = Random.Range(6, 8);
+        time = levelTime;
         timer = true;
     }
 
@@ -399,42 +403,14 @@ public class CulScriptRanking : MonoBehaviour
         transform.localScale = new Vector3(-1, 1, 1);
     }
 
-    void Story3()
-    {
-        GameObject.Find("Story").GetComponent<Story3Script>().Story3On();
-        Invoke("Story3_1", 2f);
-    }
-    void Story3_1()
-    {
-        GameObject.Find("Story").GetComponent<Story3Script>().Story3_1On();
-        Invoke("Story3_15", 1f);
-    }
-    void Story3_15()
-    {
-        GameObject.Find("Story").GetComponent<Story3Script>().Story3_15On();
-        animator.SetTrigger("attack");
-        Invoke("Story3_2", 0.5f);
-    }
-    void Story3_2()
-    {
-        GameObject.Find("Story").GetComponent<Story3Script>().Story3_2On();
-        transform.position = new Vector2(transform.position.x, yb);
-        stop = true;
-        movey = 0;
-        Invoke("OuchAni", 0.2f);
-        Invoke("Story4", 4f);
-    }
+
+
     void OuchAni()
     {
         GameObject.Find("Player").GetComponent<Animator>().SetBool("ouch", true);
         animator.SetBool("ouch", true);
     }
-    void Story4()
-    {
-        GameObject.Find("Story").GetComponent<Story3Script>().Story4On();
-        Invoke("StandingAni", 2f);
-        Invoke("Story4_2", 6f);
-    }
+
     void StandingAni()
     {
         animator.SetTrigger("standing");
@@ -449,20 +425,7 @@ public class CulScriptRanking : MonoBehaviour
     {
         movek = 1;
     }
-    void Story4_2()
-    {
-        GameObject.Find("Story").GetComponent<Story3Script>().Story4_2On();
-        Invoke("Story5", 5f);
-        xb += 10;
-        speed = 2;
-        movek = 2;
-        Invoke("move2_", 0.5f);
-    }
-    void Story5()
-    {
-        GameObject.Find("Story").GetComponent<Story3Script>().Story5On();
-        Invoke("Ending", 2f);
-    }
+
     void Ending()
     {
         GameObject.Find("Stage").GetComponent<Stage3>().StageEnding();
@@ -472,4 +435,40 @@ public class CulScriptRanking : MonoBehaviour
     {
         move2();
     }
+
+
+
+    public void clickLevel1()
+    {
+        levelTime = Random.Range(9, 11);
+
+        GameObject.Find("Stage").GetComponent<RankingStage>().stage = 2;
+        GameObject.Find("Stage").GetComponent<RankingStage>().stagemove = false;
+        levelPanel.SetActive(false);
+    }
+    public void clickLevel2()
+    {
+        levelTime = Random.Range(6, 8);
+        
+        GameObject.Find("Stage").GetComponent<RankingStage>().stage = 2;
+        GameObject.Find("Stage").GetComponent<RankingStage>().stagemove = false;
+        levelPanel.SetActive(false);
+    }
+    public void clickLevel3()
+    {
+        levelTime = Random.Range(4, 5);
+        
+        GameObject.Find("Stage").GetComponent<RankingStage>().stage = 2;
+        GameObject.Find("Stage").GetComponent<RankingStage>().stagemove = false;
+        levelPanel.SetActive(false);
+    }
+    public void clickLevel4()
+    {
+        levelTime = Random.Range(2, 3);
+        
+        GameObject.Find("Stage").GetComponent<RankingStage>().stage = 2;
+        GameObject.Find("Stage").GetComponent<RankingStage>().stagemove = false;
+        levelPanel.SetActive(false);
+    }
+
 }

@@ -40,7 +40,6 @@ public class RankingStage : MonoBehaviour
     public GameObject canvas;
     public GameObject ending;
     public GameObject FightBar;
-    public GameObject HpPlayer;
     public GameObject punch;
 
     public GameObject Pause;
@@ -107,7 +106,7 @@ public class RankingStage : MonoBehaviour
 
         ResumeMode();
 
-        stage = 2;
+        stage = 1;
         stagemove = false;
 
 
@@ -119,7 +118,6 @@ public class RankingStage : MonoBehaviour
         fly.SetActive(false);
         flymode = false;
 
-        rankingapi = Rankingapi.Instance; // firebase를 미리 initialize 하기 위해 시작하자마자 인스턴스 생성합니다.
     }
 
     void FixedUpdate()
@@ -137,13 +135,25 @@ public class RankingStage : MonoBehaviour
 
     void Update()
     {
-        if (stage == 2 && stagemove == false) //2�ܰ� ����
+        if (stage == 1 && stagemove == false) //난이도
+        {
+            fortime = 0;
+            TimeCount.transform.position = new Vector2(-8.5f, TimeCount.transform.position.y);
+            TimeBox.transform.position = new Vector2(-8.5f, TimeBox.transform.position.y);
+
+
+            punch.GetComponent<RankingPunchScript>().punchmode = 0;
+            punch.GetComponent<RankingPunchScript>().PunchMode();
+
+            stagemove = true;
+        }
+
+        if (stage == 2 && stagemove == false) // 본게임
         {
             fortime = 1;
             TimeCount.transform.position = new Vector2(-8.5f, TimeCount.transform.position.y);
             TimeBox.transform.position = new Vector2(-8.5f, TimeBox.transform.position.y);
 
-            HpPlayer.SetActive(false);
 
             punch.GetComponent<RankingPunchScript>().ScrollChange2();
 
@@ -283,7 +293,7 @@ public class RankingStage : MonoBehaviour
     {
         FightBar.SetActive(false);
         GameObject.Find("NumberBundle").GetComponent<RankingNumberBundleScript>().numbunOff();
-        rankingapi.UpdateScore("arduinocc04", 100);
+        rankingapi.UpdateScore("arduinocc04", 100); /////////
 
         Invoke("WinAni", 1f);
     }
