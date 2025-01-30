@@ -392,17 +392,6 @@ public class CulScriptRanking : MonoBehaviour
         transform.localScale = new Vector3(1, 1, 1);
         move = 1;
     }
-    public void move2()
-    {
-        Invoke("move2_", 1.5f);
-    }
-    void move2_()
-    {
-        move = 2;
-        PlaySound("culgoaway");
-        transform.localScale = new Vector3(-1, 1, 1);
-    }
-
 
 
     void OuchAni()
@@ -433,7 +422,8 @@ public class CulScriptRanking : MonoBehaviour
 
     void AllStop()
     {
-        move2();
+        realFlyoff();
+        timer = false;
     }
 
 

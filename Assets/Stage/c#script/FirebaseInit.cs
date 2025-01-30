@@ -141,7 +141,7 @@ public class FirebaseInitializer : MonoBehaviour
     // 세계회복도 업데이트
     public void UpdateWorldRecovered(string userId, int worldRecovered)
     {
-        databaseReference.Child("Users").Child(userId).Child("WorldRecovered").SetValueAsync(worldRecovered).ContinueWithOnMainThread(task =>
+        databaseReference.Child("User").Child(userId).Child("WorldRecovered").SetValueAsync(worldRecovered).ContinueWithOnMainThread(task =>
         {
             if (task.IsCompleted)
             {
@@ -157,7 +157,7 @@ public class FirebaseInitializer : MonoBehaviour
     // 코인 값 업데이트
     public void UpdateCoin(string userId, int coin)
     {
-        databaseReference.Child("Users").Child(userId).Child("Coin").SetValueAsync(coin).ContinueWithOnMainThread(task =>
+        databaseReference.Child("User").Child(userId).Child("Coin").SetValueAsync(coin).ContinueWithOnMainThread(task =>
         {
             if (task.IsCompleted)
             {
@@ -173,7 +173,7 @@ public class FirebaseInitializer : MonoBehaviour
     // 숫자 뭉치 값 업데이트
     public void UpdateNumberBundle(string userId, int numberBundle)
     {
-        databaseReference.Child("Users").Child(userId).Child("NumberBundle").SetValueAsync(numberBundle).ContinueWithOnMainThread(task =>
+        databaseReference.Child("User").Child(userId).Child("NumberBundle").SetValueAsync(numberBundle).ContinueWithOnMainThread(task =>
         {
             if (task.IsCompleted)
             {
@@ -188,17 +188,39 @@ public class FirebaseInitializer : MonoBehaviour
 
 
     // 검술 숙련도 값 업데이트
-    public void UpdateSwordProficiency(string userId, int swordProficiency)
+    public void UpdateSwordProficiency(string userId, int additionalProficiency)
     {
-        databaseReference.Child("Users").Child(userId).Child("SwordProficiency").SetValueAsync(swordProficiency).ContinueWithOnMainThread(task =>
+        DatabaseReference swordProficiencyRef = databaseReference.Child("User").Child(userId).Child("SwordProficiency");
+
+        swordProficiencyRef.GetValueAsync().ContinueWithOnMainThread(task =>
         {
             if (task.IsCompleted)
             {
-                Debug.Log("검술 숙련도가 성공적으로 업데이트되었습니다.");
+                DataSnapshot snapshot = task.Result;
+                int currentProficiency = 0;
+
+                if (snapshot.Exists && int.TryParse(snapshot.Value.ToString(), out int existingProficiency))
+                {
+                    currentProficiency = existingProficiency;
+                }
+
+                int newProficiency = currentProficiency + additionalProficiency;
+
+                swordProficiencyRef.SetValueAsync(newProficiency).ContinueWithOnMainThread(updateTask =>
+                {
+                    if (updateTask.IsCompleted)
+                    {
+                        Debug.Log($"검술 숙련도가 성공적으로 업데이트되었습니다. (기존: {currentProficiency}, 추가: {additionalProficiency}, 최종: {newProficiency})");
+                    }
+                    else
+                    {
+                        Debug.LogError("검술 숙련도 업데이트 실패: " + updateTask.Exception);
+                    }
+                });
             }
             else
             {
-                Debug.LogError("검술 숙련도 업데이트 실패: " + task.Exception);
+                Debug.LogError("검술 숙련도 값을 가져오는 데 실패함: " + task.Exception);
             }
         });
     }
@@ -206,7 +228,7 @@ public class FirebaseInitializer : MonoBehaviour
     // 전체 유저 정보 가져오기
     public void GetAllUsers()
     {
-        databaseReference.Child("Users").GetValueAsync().ContinueWithOnMainThread(task =>
+        databaseReference.Child("User").GetValueAsync().ContinueWithOnMainThread(task =>
         {
             if (task.IsCompleted)
             {

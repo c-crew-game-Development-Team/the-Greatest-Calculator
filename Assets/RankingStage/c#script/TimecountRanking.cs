@@ -10,7 +10,7 @@ public class TimecountRanking : MonoBehaviour
 {
     AudioSource audioSource;/////////////소리
 
-    public float countdownSeconds = 210;
+    public float countdownSeconds = 60;
     private TextMeshProUGUI timeText;
 
     private bool timeend;
@@ -36,7 +36,7 @@ public class TimecountRanking : MonoBehaviour
         if (timeend == true){
             if (countdownSeconds <= 0) //시간 초과 fail
             {
-                Invoke("Stagetimeout", 1f);
+                Stagetimeout();
                 Invoke("End", 5f);
                 timeend = false;
             }
@@ -51,6 +51,8 @@ public class TimecountRanking : MonoBehaviour
     }
     void Stagetimeout()
     {
+        GameObject.Find("Stage").GetComponent<RankingStage>().stage = 3;
+        GameObject.Find("Stage").GetComponent<RankingStage>().stagemove = false;
         stage.GetComponent<RankingStage>().TimeOut();
     }
 

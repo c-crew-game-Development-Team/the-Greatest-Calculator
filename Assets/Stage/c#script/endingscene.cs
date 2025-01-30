@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class endingscene : MonoBehaviour
 {   
-    private GameObject endingback, endingPlayer, endingstar1, endingstar2, endingstar3, endingfailstar2, endingfailstar3;
+    private GameObject endingback, endingPlayer, endingstar1, endingstar2, endingstar3, endingfailstar2, endingfailstar3, loseText, winText;
     public GameObject Zero, canvas, Timeover, TimeCount, TimeEndingbox, Power;
 
     public GameObject a, b, c, d, e, f, g, h, I;
@@ -156,6 +156,50 @@ public class endingscene : MonoBehaviour
         a.SetActive(false); b.SetActive(false); c.SetActive(false); d.SetActive(false); e.SetActive(false); f.SetActive(false); g.SetActive(false); h.SetActive(false); I.SetActive(false);
 
         StartCoroutine(BlinkText());
+    }
+
+    public void PlayerLoseEnd(){
+        ending = true;
+        backmusic.Pause();
+
+        GameObject.Find("Player").GetComponent<Animator>().SetBool("ouch", true);
+        endingback = Resources.Load<GameObject>("ending/endingBackground");
+        Instantiate(endingback, new Vector3(-0.08f,-0.02f,-3f), Quaternion.identity); // 배경이미지 생성
+
+        Instantiate(TimeEndingbox, new Vector3(3.75f, -0.3f, -4f), Quaternion.identity);
+        endingPlayer = Resources.Load<GameObject>("ending/timeendingplayer1");
+        Instantiate(endingPlayer, new Vector3(-0.18f,-7.89f,-5f), Quaternion.identity); //주인공이미지생성
+        loseText = Resources.Load<GameObject>("ending/lose");
+        Instantiate(loseText, new Vector3(3.75f,-0.25f,-5f), Quaternion.identity); //lose 텍스트 이미지 생성
+
+    }
+
+    public void PlayerWinEnd(){
+        ending = true;
+        backmusic.Pause();
+
+        endingback = Resources.Load<GameObject>("ending/endingBackground");
+        Instantiate(endingback, new Vector3(-0.08f,-0.02f,-3f), Quaternion.identity); // 배경이미지 생성
+
+        Instantiate(TimeEndingbox, new Vector3(3.75f, -0.3f, -4f), Quaternion.identity);
+        endingPlayer = Resources.Load<GameObject>("Rending/rankingWinplayer");
+        Instantiate(endingPlayer, new Vector3(-0.18f,-7.89f,-5f), Quaternion.identity); //주인공이미지생성
+        winText = Resources.Load<GameObject>("Rending/win");
+        Instantiate(winText, new Vector3(3.73f,-0.38f,-5f), Quaternion.identity); //win 텍스트 이미지 생성
+
+    }
+
+    public void RankingTimeend(){
+        backmusic.Pause();
+        endingback = Resources.Load<GameObject>("ending/endingBackground");
+        Instantiate(endingback, new Vector3(-0.08f,-0.02f,-3f), Quaternion.identity); // 배경이미지 생성
+        endingPlayer = Resources.Load<GameObject>("ending/timeendingplayer1");
+        Instantiate(endingPlayer, new Vector3(-0.18f,-7.89f,-5f), Quaternion.identity); //주인공이미지생성
+        canvas.GetComponent<TextScript2>().endingtext1.fontSize = 1.5f;
+        canvas.GetComponent<TextScript2>().endingtext2.fontSize = 1.5f;
+
+        Instantiate(TimeEndingbox, new Vector3(3.75f, -0.3f, -4f), Quaternion.identity);
+
     }
 }
   
