@@ -63,6 +63,8 @@ public class RankingKalScript : MonoBehaviour
 
     bool end; //게임 실패 변수
 
+    public GameObject AttackBar;
+
     private GameObject target; //마우스 클릭 확인용 변수
     void CastRay() //마우스 클릭 확인용 함수
     {
@@ -78,6 +80,7 @@ public class RankingKalScript : MonoBehaviour
 
     void Start() //게임 시작 초기화
     {
+        AttackBar.SetActive(false);
         audioSource = GetComponent<AudioSource>();/////
         animator = GetComponent<Animator>();
 

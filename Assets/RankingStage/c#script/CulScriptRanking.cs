@@ -53,9 +53,7 @@ public class CulScriptRanking : MonoBehaviour
     float x0;
     float x1;
     float speed1 = 3f;
-    float y0; //큘 둥둥 변수
-    float y1;
-    float speed2 = 0.4f;
+
 
     //난수 표시 관련
     int random;
@@ -108,8 +106,7 @@ public class CulScriptRanking : MonoBehaviour
         tremble = false;
 
         movey = 3;
-        y0 = transform.position.y;
-        y1 = y0 + 0.2f;
+      
 
         AttackBar.SetActive(false);
 
@@ -157,11 +154,7 @@ public class CulScriptRanking : MonoBehaviour
         else if (movey == 2) //ㅂㄷㅂㄷ
             transform.position = new Vector2(transform.position.x + speed1 * Time.deltaTime, transform.position.y);
 
-        if (movey == 3) //둥둥
-            transform.position = transform.position - transform.up * speed2 * Time.deltaTime;
-        else if (movey == 4)
-            transform.position = transform.position + transform.up * speed2 * Time.deltaTime;
-
+       
         if (flymode == true)
         {
             fly.transform.position = Vector2.Lerp(fly.transform.position, new Vector2(xf, yf), Time.deltaTime * speed3);
@@ -190,10 +183,7 @@ public class CulScriptRanking : MonoBehaviour
                 movey = 2;
         }
 
-        if (transform.position.y >= y1 && stop == false)
-            movey = 3;
-        else if (transform.position.y <= y0 && stop == false)
-            movey = 4;
+  
 
         if (timer == true)
         {
@@ -319,7 +309,8 @@ public class CulScriptRanking : MonoBehaviour
 
     public void Fly()
     {
-        animator.SetTrigger("attack");
+        AttackBar.SetActive(false);
+        animator.SetTrigger("R_attack");
         PlaySound("SwordR");
         fly.SetActive(true);
         fnum1.SetActive(false);
@@ -331,6 +322,7 @@ public class CulScriptRanking : MonoBehaviour
     }
     public void Flyoff()
     {
+        AttackBar.SetActive(true);
         if (numnum == 1)
         {
             GameObject.Find("NumberBundle").GetComponent<RankingNumberBundleScript>().num1setting();
@@ -359,6 +351,7 @@ public class CulScriptRanking : MonoBehaviour
     }
     public void realFlyoff()
     {
+        AttackBar.SetActive(true);
         fnum1.SetActive(false);
         fnum2.SetActive(false);
         fly.SetActive(false);
@@ -393,27 +386,6 @@ public class CulScriptRanking : MonoBehaviour
         move = 1;
     }
 
-
-    void OuchAni()
-    {
-        GameObject.Find("Player").GetComponent<Animator>().SetBool("ouch", true);
-        animator.SetBool("ouch", true);
-    }
-
-    void StandingAni()
-    {
-        animator.SetTrigger("standing");
-        Invoke("DungDung", 1.5f);
-        Invoke("movek_", 2f);
-    }
-    void DungDung()
-    {
-        stop = false;
-    }
-    void movek_()
-    {
-        movek = 1;
-    }
 
     void Ending()
     {

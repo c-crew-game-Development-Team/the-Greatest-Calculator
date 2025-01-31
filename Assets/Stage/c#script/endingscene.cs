@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class endingscene : MonoBehaviour
 {   
-    private GameObject endingback, endingPlayer, endingstar1, endingstar2, endingstar3, endingfailstar2, endingfailstar3, loseText, winText;
+    private GameObject endingback, endingPlayer, endingstar1, endingstar2, endingstar3, endingfailstar2, endingfailstar3, loseText, winText,swordText;
     public GameObject Zero, canvas, Timeover, TimeCount, TimeEndingbox, Power;
 
     public GameObject a, b, c, d, e, f, g, h, I;
@@ -171,6 +171,8 @@ public class endingscene : MonoBehaviour
         Instantiate(endingPlayer, new Vector3(-0.18f,-7.89f,-5f), Quaternion.identity); //주인공이미지생성
         loseText = Resources.Load<GameObject>("ending/lose");
         Instantiate(loseText, new Vector3(3.75f,-0.25f,-5f), Quaternion.identity); //lose 텍스트 이미지 생성
+        swordText = Resources.Load<GameObject>("Rending/Canvasending 2");
+        Instantiate(swordText);
 
     }
 
@@ -186,6 +188,8 @@ public class endingscene : MonoBehaviour
         Instantiate(endingPlayer, new Vector3(-0.18f,-7.89f,-5f), Quaternion.identity); //주인공이미지생성
         winText = Resources.Load<GameObject>("Rending/win");
         Instantiate(winText, new Vector3(3.73f,-0.38f,-5f), Quaternion.identity); //win 텍스트 이미지 생성
+        swordText = Resources.Load<GameObject>("Rending/Canvasending");
+        Instantiate(swordText);
 
     }
 
