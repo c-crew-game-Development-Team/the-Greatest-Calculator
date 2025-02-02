@@ -101,5 +101,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/REplayername.unity
     guid: 9a7ccda7e66a342b8a5e61182115f4a5
+  - enabled: 1
+    path: Assets/Scenes/Ranking Stage.unity
+    guid: b5b114e3d03b82014980cf1e7d4ac3b3
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
