@@ -308,8 +308,7 @@ public class RankingNumberBundleScript : MonoBehaviour
 
     public void num1setting()
     {
-        if (damaged1 == 0)
-        {
+        if (num1.activeSelf == true) {
             if (who1 == 1)
             {
                 KalUp();
@@ -318,8 +317,7 @@ public class RankingNumberBundleScript : MonoBehaviour
             {
                 CulUp();
             }
-            damaged1 = who1;
-            Invoke("num1damaged", 1.5f);
+            who1 = 0;
             num1.SetActive(false);
             Invoke("num1setting_", 0.8f);
         }
@@ -335,8 +333,7 @@ public class RankingNumberBundleScript : MonoBehaviour
 
     public void num2setting()
     {
-        if (damaged2 == 0)
-        {
+        if (num2.activeSelf == true) {
             if (who2 == 1)
             {
                 KalUp();
@@ -345,10 +342,9 @@ public class RankingNumberBundleScript : MonoBehaviour
             {
                 CulUp();
             }
-            damaged2 = who2;
-            Invoke("num2damaged", 1.5f);
+            who2 = 0;
             num2.SetActive(false);
-            Invoke("num2setting_", 0.8f);
+            Invoke("num2setting_", 0.9f);
         }
     }
     void num2setting_()
@@ -362,8 +358,7 @@ public class RankingNumberBundleScript : MonoBehaviour
 
     public void num3setting()
     {
-        if (damaged3 == 0)
-        {
+        if (num3.activeSelf == true) {
             if (who3 == 1)
             {
                 KalUp();
@@ -372,10 +367,9 @@ public class RankingNumberBundleScript : MonoBehaviour
             {
                 CulUp();
             }
-            damaged3 = who3;
-            Invoke("num3damaged", 1.5f);
+            who3 = 0;
             num3.SetActive(false);
-            Invoke("num3setting_", 0.8f);
+            Invoke("num3setting_", 0.9f);
         }
     }
     void num3setting_()
@@ -389,8 +383,7 @@ public class RankingNumberBundleScript : MonoBehaviour
 
     public void num4setting()
     {
-        if (damaged4 == 0)
-        {
+        if (num4.activeSelf == true) {
             if (who4 == 1)
             {
                 KalUp();
@@ -399,10 +392,9 @@ public class RankingNumberBundleScript : MonoBehaviour
             {
                 CulUp();
             }
-            damaged4 = who4;
-            Invoke("num4damaged", 1.5f);
+            who4 = 0;
             num4.SetActive(false);
-            Invoke("num4setting_", 0.8f);
+            Invoke("num4setting_", 0.9f);
         }
     }
     void num4setting_()
@@ -416,8 +408,7 @@ public class RankingNumberBundleScript : MonoBehaviour
 
     public void num5setting()
     {
-        if(damaged5 == 0)
-        {
+        if (num5.activeSelf == true) {
             if (who5 == 1)
             {
                 KalUp();
@@ -426,10 +417,9 @@ public class RankingNumberBundleScript : MonoBehaviour
             {
                 CulUp();
             }
-            damaged5 = who5;
-            Invoke("num5damaged", 1.5f);
+            who5 = 0;
             num5.SetActive(false);
-            Invoke("num5setting_", 0.8f);
+            Invoke("num5setting_", 0.9f);
         }
     }
     void num5setting_()
@@ -440,33 +430,7 @@ public class RankingNumberBundleScript : MonoBehaviour
         num5.SetActive(true);
         num5.transform.position = new Vector2(x0, y0);
     }
-
-    public void num1damaged()
-    {
-        damaged1 = 0;
-        who1 = 0;
-    }
-    public void num2damaged()
-    {
-        damaged2 = 0;
-        who2 = 0;
-    }
-    public void num3damaged()
-    {
-        damaged3 = 0;
-        who3 = 0;
-    }
-    public void num4damaged()
-    {
-        damaged4 = 0;
-        who4 = 0;
-    }
-    public void num5damaged()
-    {
-        damaged5 = 0;
-        who5 = 0;
-    }
-
+    
     public void KalUp()
     {
         Canvas.GetComponent<RankingFightBarScript>().fighthbar += 1;
