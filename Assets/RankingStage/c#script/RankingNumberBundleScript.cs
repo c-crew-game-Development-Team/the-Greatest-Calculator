@@ -344,7 +344,7 @@ public class RankingNumberBundleScript : MonoBehaviour
             }
             who2 = 0;
             num2.SetActive(false);
-            Invoke("num2setting_", 0.9f);
+            Invoke("num2setting_", 0.8f);
         }
     }
     void num2setting_()
@@ -369,7 +369,7 @@ public class RankingNumberBundleScript : MonoBehaviour
             }
             who3 = 0;
             num3.SetActive(false);
-            Invoke("num3setting_", 0.9f);
+            Invoke("num3setting_", 0.8f);
         }
     }
     void num3setting_()
@@ -394,7 +394,7 @@ public class RankingNumberBundleScript : MonoBehaviour
             }
             who4 = 0;
             num4.SetActive(false);
-            Invoke("num4setting_", 0.9f);
+            Invoke("num4setting_", 0.8f);
         }
     }
     void num4setting_()
@@ -419,7 +419,7 @@ public class RankingNumberBundleScript : MonoBehaviour
             }
             who5 = 0;
             num5.SetActive(false);
-            Invoke("num5setting_", 0.9f);
+            Invoke("num5setting_", 0.8f);
         }
     }
     void num5setting_()
