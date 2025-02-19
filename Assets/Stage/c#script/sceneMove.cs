@@ -9,7 +9,7 @@ public class sceneMove : MonoBehaviour
 {
     
     public void SceneChange(){ // 랭킹
-        SceneManager.LoadScene("RankingFight");
+        SceneManager.LoadScene("Ranking Stage");
     }
     public void SceneChange2(){
         SceneManager.LoadScene("RealRanking");

@@ -22,7 +22,7 @@ public class DontDestoryObject : MonoBehaviour
     }
     void Update(){
         if (dedestroy){
-            if (SceneManager.GetActiveScene().name == "Stagehome" || SceneManager.GetActiveScene().name == "Rankingani" || SceneManager.GetActiveScene().name == "3 Startani"){
+            if (SceneManager.GetActiveScene().name == "Stagehome" || SceneManager.GetActiveScene().name == "Rankingani" || SceneManager.GetActiveScene().name == "3 Startani" || SceneManager.GetActiveScene().name == "Ranking Stage"){
                 Destroy(gameObject);
                 dedestroy = false;
             }

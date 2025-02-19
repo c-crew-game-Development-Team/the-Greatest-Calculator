@@ -206,7 +206,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &25675501
+--- !u!1 &9350686
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -214,28 +214,10 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2015123472}
-  - component: {fileID: 2015123474}
-  - component: {fileID: 2015123473}
-  - component: {fileID: 2015123471}
-  m_Layer: 5
-  m_Name: 4
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &55040171
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 55040174}
-  - component: {fileID: 55040173}
-  - component: {fileID: 55040172}
+  - component: {fileID: 9350690}
+  - component: {fileID: 9350689}
+  - component: {fileID: 9350688}
+  - component: {fileID: 9350687}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -243,25 +225,37 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &55040172
+--- !u!114 &9350687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9350686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90cb29813b59549c6a8492ddff2cfce0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!81 &9350688
 AudioListener:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 55040171}
+  m_GameObject: {fileID: 9350686}
   m_Enabled: 1
---- !u!20 &55040173
+--- !u!20 &9350689
 Camera:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 55040171}
+  m_GameObject: {fileID: 9350686}
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -286,7 +280,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 4.865744
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -302,21 +296,40 @@ Camera:
   m_OcclusionCulling: 0
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!4 &55040174
+--- !u!4 &9350690
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 55040171}
+  m_GameObject: {fileID: 9350686}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -15}
+  m_LocalPosition: {x: 0, y: 0, z: -100}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &25675501
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2015123472}
+  - component: {fileID: 2015123474}
+  - component: {fileID: 2015123473}
+  - component: {fileID: 2015123471}
+  m_Layer: 5
+  m_Name: 4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &98279072
 GameObject:
   m_ObjectHideFlags: 0
@@ -3429,7 +3442,7 @@ PrefabInstance:
     - target: {fileID: 4186774019731962730, guid: c758305c9bf31db4c82d8f04a0d02826, type: 3}
       propertyPath: m_Camera
       value: 
-      objectReference: {fileID: 55040173}
+      objectReference: {fileID: 0}
     - target: {fileID: 4186774019731962733, guid: c758305c9bf31db4c82d8f04a0d02826, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -7859,7 +7872,6 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1077805131}
-  - {fileID: 55040174}
   - {fileID: 1693342155}
   - {fileID: 1680645333}
   - {fileID: 111329483}
@@ -7887,3 +7899,4 @@ SceneRoots:
   - {fileID: 1997443596}
   - {fileID: 1235591702}
   - {fileID: 2183896892451265321}
+  - {fileID: 9350690}

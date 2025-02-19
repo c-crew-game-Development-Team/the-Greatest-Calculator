@@ -165,7 +165,7 @@ PlayerSettings:
   applicationIdentifier:
     Android: com.ccrew.thegreatestcalculator
     Standalone: com.DefaultCompany.2DProject
-    iPhone: com.Ccrew.final
+    iPhone: com.ccrew.thegreatestcalculator
   buildNumber:
     Standalone: 0
     VisionOS: 0

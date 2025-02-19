@@ -3,6 +3,8 @@ using Firebase;
 using Firebase.Database;
 using Firebase.Extensions;
 using System.Collections.Generic; // Dictionary
+using System.Linq;
+using System;
 
 public class FirebaseInitializer : MonoBehaviour
 {
@@ -102,7 +104,7 @@ public class FirebaseInitializer : MonoBehaviour
         });
     }
 
-    // 메인룸 유저 정보 가져오기 (콜백 방식)
+    // 유저 정보 가져오기 (콜백 방식)
     public void GetMainRoomUserInfo(string userId, System.Action<DataSnapshot> onSuccess, System.Action<string> onError)
     {
         if (databaseReference == null)
@@ -137,6 +139,7 @@ public class FirebaseInitializer : MonoBehaviour
             }
         });
     }
+
 
     // 세계회복도 업데이트
     public void UpdateWorldRecovered(string userId, int worldRecovered)
@@ -225,23 +228,57 @@ public class FirebaseInitializer : MonoBehaviour
         });
     }
 
-    // 전체 유저 정보 가져오기
-    public void GetAllUsers()
+    // 랭킹용 전체 유저 숙련도 정렬
+    public void GetAllUsersSortedBySwordProficiency(System.Action<List<UserData>> callback)
     {
         databaseReference.Child("User").GetValueAsync().ContinueWithOnMainThread(task =>
         {
             if (task.IsCompleted)
             {
                 DataSnapshot snapshot = task.Result;
+                List<UserData> userList = new List<UserData>();
+
                 foreach (DataSnapshot user in snapshot.Children)
                 {
-                    Debug.Log($"유저: {user.Key}, 데이터: {user.GetRawJsonValue()}");
+                    string userId = user.Key;
+                    string json = user.GetRawJsonValue();
+
+                    if (!string.IsNullOrEmpty(json))
+                    {
+                        UserData userData = JsonUtility.FromJson<UserData>(json);
+                        userData.userId = userId;
+                        userList.Add(userData);
+
+                        // 콘솔에 가져온 데이터 출력
+                        //Debug.Log($"UserID: {userId}, SwordProficiency: {userData.SwordProficiency}");
+                    }
                 }
+
+                // SwordProficiency 기준 내림차순 정렬
+                userList = userList.OrderByDescending(u => u.SwordProficiency).ToList();
+
+                // 정렬된 유저 리스트 출력
+                //Debug.Log("==== Sorted User List ====");
+                // foreach (var user in userList)
+                // {
+                //     Debug.Log($"Ranked UserID: {user.userId}, SwordProficiency: {user.SwordProficiency}");
+                // }
+
+                // 콜백 호출
+                callback?.Invoke(userList);
             }
             else
             {
-                Debug.LogError("모든 유저 정보를 가져오는 데 실패했습니다: " + task.Exception);
+                Debug.LogError("Firebase 데이터 가져오기에 실패했습니다: " + task.Exception);
+                callback?.Invoke(new List<UserData>()); // 빈 리스트 반환
             }
         });
+    }
+
+    [System.Serializable]
+    public class UserData
+    {
+        public string userId;
+        public int SwordProficiency;
     }
 }

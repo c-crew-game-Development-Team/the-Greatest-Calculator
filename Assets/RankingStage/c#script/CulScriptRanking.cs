@@ -183,7 +183,7 @@ public class CulScriptRanking : MonoBehaviour
                 movey = 2;
         }
 
-  
+
 
         if (timer == true)
         {
@@ -254,43 +254,52 @@ public class CulScriptRanking : MonoBehaviour
     public void CulPlus()
     {
         numnum = Random.Range(1, 6);
+
         if (numnum == 1)
         {
             anum = GameObject.Find("NumberBundle").GetComponent<RankingNumberBundleScript>().anum1;
             xf = GameObject.Find("NumberBundle").GetComponent<RankingNumberBundleScript>().x1;
             yf = GameObject.Find("NumberBundle").GetComponent<RankingNumberBundleScript>().y1;
-            GameObject.Find("NumberBundle").GetComponent<RankingNumberBundleScript>().who1 = 2;
+            flynummaker();
+            Invoke("Fly", 0.8f);
+            StartCoroutine(Delay(1));
         }
         else if (numnum == 2)
         {
             anum = GameObject.Find("NumberBundle").GetComponent<RankingNumberBundleScript>().anum2;
             xf = GameObject.Find("NumberBundle").GetComponent<RankingNumberBundleScript>().x2;
             yf = GameObject.Find("NumberBundle").GetComponent<RankingNumberBundleScript>().y2;
-            GameObject.Find("NumberBundle").GetComponent<RankingNumberBundleScript>().who2 = 2;
+            flynummaker();
+            Invoke("Fly", 0.8f);
+            StartCoroutine(Delay(2));
         }
         else if (numnum == 3)
         {
             anum = GameObject.Find("NumberBundle").GetComponent<RankingNumberBundleScript>().anum3;
             xf = GameObject.Find("NumberBundle").GetComponent<RankingNumberBundleScript>().x3;
             yf = GameObject.Find("NumberBundle").GetComponent<RankingNumberBundleScript>().y3;
-            GameObject.Find("NumberBundle").GetComponent<RankingNumberBundleScript>().who3 = 2;
+            flynummaker();
+            Invoke("Fly", 0.8f);
+            StartCoroutine(Delay(3));
         }
         else if (numnum == 4)
         {
             anum = GameObject.Find("NumberBundle").GetComponent<RankingNumberBundleScript>().anum4;
             xf = GameObject.Find("NumberBundle").GetComponent<RankingNumberBundleScript>().x4;
             yf = GameObject.Find("NumberBundle").GetComponent<RankingNumberBundleScript>().y4;
-            GameObject.Find("NumberBundle").GetComponent<RankingNumberBundleScript>().who4 = 2;
+            flynummaker();
+            Invoke("Fly", 0.8f);
+            StartCoroutine(Delay(4));
         }
         else if (numnum == 5)
         {
             anum = GameObject.Find("NumberBundle").GetComponent<RankingNumberBundleScript>().anum5;
             xf = GameObject.Find("NumberBundle").GetComponent<RankingNumberBundleScript>().x5;
             yf = GameObject.Find("NumberBundle").GetComponent<RankingNumberBundleScript>().y5;
-            GameObject.Find("NumberBundle").GetComponent<RankingNumberBundleScript>().who5 = 2;
+            flynummaker();
+            Invoke("Fly", 0.8f);
+            StartCoroutine(Delay(5));
         }
-        flynummaker();
-        Invoke("Fly", 1f);
     }
 
     void flynummaker() //플레이어 머리 위 난수 생성 함수
@@ -398,6 +407,32 @@ public class CulScriptRanking : MonoBehaviour
         timer = false;
     }
 
+    IEnumerator Delay(int val)
+    {
+        yield return new WaitForSeconds(0.8f);
+
+        if (val == 1) {
+            GameObject.Find("NumberBundle").GetComponent<RankingNumberBundleScript>().who1 = 2;
+            GameObject.Find("NumberBundle").GetComponent<RankingNumberBundleScript>().num1setting();
+        }
+        else if (val == 2) {
+            GameObject.Find("NumberBundle").GetComponent<RankingNumberBundleScript>().who2 = 2;
+            GameObject.Find("NumberBundle").GetComponent<RankingNumberBundleScript>().num2setting();
+        }
+        else if (val == 3) {
+            GameObject.Find("NumberBundle").GetComponent<RankingNumberBundleScript>().who3 = 2;
+            GameObject.Find("NumberBundle").GetComponent<RankingNumberBundleScript>().num3setting();
+        }
+        else if (val == 4) {
+            GameObject.Find("NumberBundle").GetComponent<RankingNumberBundleScript>().who4 = 2;
+            GameObject.Find("NumberBundle").GetComponent<RankingNumberBundleScript>().num4setting();
+        }
+        else if (val == 5) {
+            GameObject.Find("NumberBundle").GetComponent<RankingNumberBundleScript>().who5 = 2;
+            GameObject.Find("NumberBundle").GetComponent<RankingNumberBundleScript>().num5setting();
+        }
+        
+    }
 
 
     public void clickLevel1()
