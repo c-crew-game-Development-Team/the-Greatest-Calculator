@@ -104,7 +104,7 @@ public class FirebaseInitializer : MonoBehaviour
         });
     }
 
-    // 메인룸 유저 정보 가져오기 (콜백 방식)
+    // 유저 정보 가져오기 (콜백 방식)
     public void GetMainRoomUserInfo(string userId, System.Action<DataSnapshot> onSuccess, System.Action<string> onError)
     {
         if (databaseReference == null)
@@ -139,6 +139,7 @@ public class FirebaseInitializer : MonoBehaviour
             }
         });
     }
+
 
     // 세계회복도 업데이트
     public void UpdateWorldRecovered(string userId, int worldRecovered)
