@@ -38,7 +38,7 @@
   <tr>
     <tr>
     <th>윤수연
-    <a href="https://github.com/" target="_blank">()</a>
+    <a href="https://github.com/iioese" target="_blank">(iioese)</a>
     </th>
   </tr>
   </tr>
